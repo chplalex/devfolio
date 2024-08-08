@@ -25,10 +25,12 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Check out
+      - name: check out to main branch
         uses: actions/checkout@v4.1.7
+        with:
+          ref: "main"
 
-      - name: Publish current workdir (which contains generated content) to GitHub Pages
+      - name: copy "build/web" content to the "gh-pages" branch
         uses: rayluo/github-pages-overwriter@v1.3
         with:
           source-directory: build/web
