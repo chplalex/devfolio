@@ -33,4 +33,4 @@ jobs:
       - name: copy "build/web" content to the "gh-pages" branch
         uses: rayluo/github-pages-overwriter@v1.3
         with:
-          source-directory: build/web
+          source-directory: lib
