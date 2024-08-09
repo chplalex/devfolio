@@ -1,4 +1,4 @@
-name: Deploy static content to Pages
+name: Copy "build_web" folder to "gh-pages" branch
 
 on:
   push:
@@ -27,10 +27,8 @@ jobs:
     steps:
       - name: check out to main branch
         uses: actions/checkout@v4.1.7
-        with:
-          ref: "main"
 
-      - name: copy "build/web" content to the "gh-pages" branch
+      - name: copy "build_web" content to the "gh-pages" branch
         uses: rayluo/github-pages-overwriter@v1.3
         with:
-          source-directory: lib
+          source-directory: build_web
