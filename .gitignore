@@ -32,7 +32,6 @@ lib/provider/github_provider.dart
 .pub-cache/
 .pub/
 /build/
-!/build/web/
 
 # Web related
 
