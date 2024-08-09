@@ -1,9 +1,7 @@
 part of '../services.dart';
 
 class _ServiceCardBackWidget extends StatelessWidget {
-  const _ServiceCardBackWidget(
-      {Key? key, required this.serviceDesc, required this.serviceTitle})
-      : super(key: key);
+  const _ServiceCardBackWidget({required this.serviceDesc, required this.serviceTitle});
 
   final String serviceDesc;
   final String serviceTitle;

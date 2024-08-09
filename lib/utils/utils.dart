@@ -16,12 +16,12 @@ class StaticUtils {
 
   // work
   static const String dsc = 'assets/work/dsc.png';
-  static const String sastaticket = 'assets/work/st.png';
+  static const String sastaTicket = 'assets/work/st.png';
   static const String university = 'assets/work/cui.png';
-  static const String fullterIsb = 'assets/work/flutterIsl.png';
+  static const String flutterIsb = 'assets/work/flutterIsl.png';
 
   // services
-  static const String uiux = 'assets/services/ui.png';
+  static const String uiUx = 'assets/services/ui.png';
   static const String blog = 'assets/services/blog.png';
   static const String appDev = 'assets/services/app.png';
   static const String rapid = 'assets/services/rapid.png';

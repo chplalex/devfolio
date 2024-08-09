@@ -3,7 +3,7 @@ import 'package:folio/utils/utils.dart';
 class ServicesUtils {
   static const List<String> servicesIcons = [
     StaticUtils.appDev,
-    StaticUtils.uiux,
+    StaticUtils.uiUx,
     StaticUtils.rapid,
     StaticUtils.blog,
     StaticUtils.openSource,

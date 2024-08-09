@@ -49,3 +49,4 @@ app.*.map.json
 # FVM Version Cache
 .fvm/
 /.fvmrc
+/devtools_options.yaml

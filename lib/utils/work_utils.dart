@@ -3,9 +3,9 @@ import 'package:folio/utils/utils.dart';
 class WorkUtils {
   static const List<String> logos = [
     StaticUtils.university,
-    StaticUtils.fullterIsb,
+    StaticUtils.flutterIsb,
     StaticUtils.dsc,
-    StaticUtils.sastaticket,
+    StaticUtils.sastaTicket,
   ];
 
   static const List<String> communityLinks = [

@@ -1,7 +1,7 @@
 part of '../main_section.dart';
 
 class _NavbarDesktop extends StatelessWidget {
-  const _NavbarDesktop({Key? key}) : super(key: key);
+  const _NavbarDesktop();
 
   @override
   Widget build(BuildContext context) {
@@ -66,12 +66,11 @@ class _NavbarDesktop extends StatelessWidget {
 }
 
 class _NavBarTablet extends StatelessWidget {
-  const _NavBarTablet({Key? key}) : super(key: key);
+  const _NavBarTablet();
 
   @override
   Widget build(BuildContext context) {
     final drawerProvider = Provider.of<DrawerProvider>(context);
-
     return Padding(
       padding: Space.v!,
       child: Row(
@@ -80,12 +79,8 @@ class _NavBarTablet extends StatelessWidget {
           IconButton(
             highlightColor: Colors.white54,
             splashRadius: AppDimensions.normalize(10),
-            onPressed: () {
-              drawerProvider.key.currentState!.openDrawer();
-            },
-            icon: const Icon(
-              Icons.menu,
-            ),
+            onPressed: () => drawerProvider.key.currentState!.openDrawer(),
+            icon: const Icon(Icons.menu),
           ),
           Space.xm!,
           const NavBarLogo(),

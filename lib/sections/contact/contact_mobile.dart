@@ -6,7 +6,7 @@ import 'package:folio/widget/custom_text_heading.dart';
 import 'package:folio/widget/project_card.dart';
 
 class ContactMobileTab extends StatelessWidget {
-  const ContactMobileTab({Key? key}) : super(key: key);
+  const ContactMobileTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class ContactMobileTab extends StatelessWidget {
             ),
           ),
           options: CarouselOptions(
-            height: AppDimensions.normalize(90),
+            height: AppDimensions.normalize(110),
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 5),
             enlargeCenterPage: true,
