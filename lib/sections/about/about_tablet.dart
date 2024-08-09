@@ -12,7 +12,7 @@ import 'package:folio/widget/community_button.dart';
 import 'package:folio/widget/tech_widget.dart';
 
 class AboutTab extends StatelessWidget {
-  const AboutTab({Key? key}) : super(key: key);
+  const AboutTab({super.key});
 
   @override
   Widget build(BuildContext context) {

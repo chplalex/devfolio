@@ -7,7 +7,7 @@ import 'package:folio/utils/utils.dart';
 import 'package:folio/widget/social_links.dart';
 
 class HomeTab extends StatelessWidget {
-  const HomeTab({Key? key}) : super(key: key);
+  const HomeTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,7 @@ class HomeTab extends StatelessWidget {
                 duration: const Duration(milliseconds: 800),
                 child: Image.asset(
                   StaticUtils.blackWhitePhoto,
-                  height: size.width < 1200
-                      ? size.height * 0.75
-                      : size.height * 0.85,
+                  height: size.width < 1200 ? size.height * 0.75 : size.height * 0.85,
                 ),
               ),
             ),
@@ -68,16 +66,11 @@ class HomeTab extends StatelessWidget {
                 Space.y1!,
                 Text(
                   "Muhammad",
-                  style: AppText.h1!.copyWith(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w100,
-                  ),
+                  style: AppText.h1!.copyWith(fontFamily: 'Montserrat', fontWeight: FontWeight.w100),
                 ),
                 Text(
                   "Hamza",
-                  style: AppText.h1b!.copyWith(
-                    height: 1,
-                  ),
+                  style: AppText.h1b!.copyWith(height: 1),
                 ),
                 EntranceFader(
                   offset: const Offset(-10, 0),

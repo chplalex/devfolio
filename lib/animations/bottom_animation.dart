@@ -16,8 +16,7 @@ class Animator extends StatefulWidget {
   AnimatorState createState() => AnimatorState();
 }
 
-class AnimatorState extends State<Animator>
-    with SingleTickerProviderStateMixin {
+class AnimatorState extends State<Animator> with SingleTickerProviderStateMixin {
   Timer? timer;
   AnimationController? animationController;
   Animation? animation;
@@ -25,10 +24,8 @@ class AnimatorState extends State<Animator>
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(
-        duration: const Duration(milliseconds: 290), vsync: this);
-    animation =
-        CurvedAnimation(parent: animationController!, curve: Curves.easeInOut);
+    animationController = AnimationController(duration: const Duration(milliseconds: 290), vsync: this);
+    animation = CurvedAnimation(parent: animationController!, curve: Curves.easeInOut);
     timer = Timer(widget.time!, animationController!.forward);
   }
 
@@ -73,10 +70,7 @@ wait() {
 class WidgetAnimator extends StatelessWidget {
   final Widget child;
 
-  const WidgetAnimator({
-    Key? key,
-    required this.child,
-  }) : super(key: key);
+  const WidgetAnimator({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
