@@ -14,7 +14,8 @@ dependencies:
   flutter:
     sdk: flutter
   animated_text_kit: ^4.2.2
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
+  file: ^7.0.0
   flip_card: ^0.7.0
   font_awesome_flutter: ^10.7.0
   provider: ^6.1.2
@@ -22,15 +23,7 @@ dependencies:
   universal_html: ^2.2.4
   url_launcher: ^6.3.0
   url_strategy: ^0.3.0
-  file: ^7.0.0
-
-dependency_overrides:
-  # conflict carousel_slider: ^4.2.1 and flutter 3.24.0
-  # https://github.com/serenader2014/flutter_carousel_slider/issues/454#issuecomment-2272298820
-  carousel_slider:
-    git:
-      url: https://github.com/sampaio96/flutter_carousel_slider.git
-      ref: master
+  web: any
 
 dev_dependencies:
   flutter_test:
