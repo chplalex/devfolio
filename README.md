@@ -11,7 +11,7 @@ List of technical changes:
 4) Upgraded AGP to 8.4.2
 5) Added auto deployment web version through GitHub action and pages.
 
-## 🔗 The portfolio links
+## The portfolio links
 
 * Web: https://chplalex.github.io/devfolio
 * Android: coming soon
