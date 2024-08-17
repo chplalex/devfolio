@@ -13,4 +13,6 @@ List of technical changes:
 
 ## 🔗 The portfolio links
 
-🌐 Web: https://chplalex.github.io/devfolio
+* Web: https://chplalex.github.io/devfolio
+* Android: coming soon
+* iOS: coming soon
