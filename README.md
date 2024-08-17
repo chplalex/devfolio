@@ -1,3 +1,9 @@
+## The portfolio links
+
+* Web: https://chplalex.github.io/devfolio
+* Android: coming soon
+* iOS: coming soon
+
 ## Multi-platform Portfolio with Flutter 
 
 This project is based on Muhammad Hamza's repository (https://github.com/mhmzdev/devfolio). 
@@ -10,9 +16,5 @@ List of technical changes:
 3) Upgraded Gradle to 8.7
 4) Upgraded AGP to 8.4.2
 5) Added auto deployment web version through GitHub action and pages.
-
-## The portfolio links
-
-* Web: https://chplalex.github.io/devfolio
-* Android: coming soon
-* iOS: coming soon
+6) Added dependency injection ([get_it](https://pub.dev/packages/get_it))
+7) Added multilanguage localization (English/Hebrew/Russian)
