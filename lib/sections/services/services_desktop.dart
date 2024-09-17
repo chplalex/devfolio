@@ -19,12 +19,8 @@ class ServiceDesktopState extends State<ServiceDesktop> {
       padding: Space.hf(4),
       child: Column(
         children: [
-          const CustomSectionHeading(
-            text: '\nWhat I can do?',
-          ),
-          const CustomSectionSubHeading(
-            text: 'I may not be perfect but surely I\'m of some use :)\n\n',
-          ),
+          const SectionHeading('services_section_header'),
+          const SectionSubHeading('services_section_sub_header'),
           Space.y!,
           Wrap(
             spacing: width * 0.05,
@@ -38,8 +34,7 @@ class ServiceDesktopState extends State<ServiceDesktop> {
                   (e) => _ServiceCard(
                     serviceIcon: ServicesUtils.servicesIcons[e.key],
                     serviceTitle: ServicesUtils.servicesTitles[e.key],
-                    serviceDescription:
-                        ServicesUtils.servicesDescription[e.key],
+                    serviceDescription: ServicesUtils.servicesDescription[e.key],
                   ),
                 )
                 .toList(),

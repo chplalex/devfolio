@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-extension SuperTextStyles on TextStyle {
+extension TextStyleExtension on TextStyle {
   TextStyle cl(Color color) {
     return copyWith(
       color: color,

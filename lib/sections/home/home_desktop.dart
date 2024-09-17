@@ -1,17 +1,23 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:folio/animations/entrance_fader.dart';
-import 'package:folio/configs/configs.dart';
 
 import 'package:folio/utils/utils.dart';
 import 'package:folio/widget/social_links.dart';
+
+import '../../app/app_dimensions.dart';
+import '../../app/app_localizations.dart';
+import '../../app/app_theme.dart';
+import '../../app/app_typography.dart';
+import '../../app/space.dart';
 
 class HomeDesktop extends StatelessWidget {
   const HomeDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
+    final localizations = AppLocalizations.of(context);
 
     return Container(
       height: size.height * 1.025,
@@ -68,7 +74,7 @@ class HomeDesktop extends StatelessWidget {
                 ),
                 Space.y1!,
                 Text(
-                  "Muhammad",
+                  localizations.translate('first_name'),
                   style: AppText.h1!.copyWith(
                     fontFamily: 'Montserrat',
                     fontSize: AppDimensions.normalize(25),
@@ -76,7 +82,7 @@ class HomeDesktop extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Hamza",
+                  localizations.translate('last_name'),
                   style: AppText.h1b!.copyWith(
                     fontSize: AppDimensions.normalize(25),
                     height: 1,

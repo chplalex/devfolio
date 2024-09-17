@@ -101,16 +101,10 @@ class _ServiceCardState extends State<_ServiceCard> {
               Image.asset(
                 widget.serviceIcon,
                 height: AppDimensions.normalize(30),
-                color: widget.serviceIcon.contains(StaticUtils.openSource) &&
-                        !appProvider.isDark
-                    ? Colors.black
-                    : null,
+                color: widget.serviceIcon.contains(StaticUtils.openSource) && !appProvider.isDark ? Colors.black : null,
               ),
               Space.y1!,
-              Text(
-                widget.serviceTitle,
-                textAlign: TextAlign.center,
-              ),
+              Text(widget.serviceTitle, textAlign: TextAlign.center),
             ],
           ),
         ),

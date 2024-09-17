@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:folio/configs/app_typography.dart';
+
+import '../app/app_typography.dart';
 
 class NavBarLogo extends StatelessWidget {
   const NavBarLogo({super.key});
@@ -14,7 +15,7 @@ class NavBarLogo extends StatelessWidget {
           style: AppText.b1,
         ),
         Text(
-          "Hamza",
+          "Elpern",
           style: AppText.b1b!.copyWith(
             fontFamily: 'Agustina',
           ),

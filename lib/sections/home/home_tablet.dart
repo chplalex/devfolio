@@ -1,13 +1,17 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:folio/animations/entrance_fader.dart';
-import 'package:folio/configs/configs.dart';
 import 'package:folio/utils/utils.dart';
 
 import 'package:folio/widget/social_links.dart';
 
-class HomeTab extends StatelessWidget {
-  const HomeTab({super.key});
+import '../../app/app_dimensions.dart';
+import '../../app/app_theme.dart';
+import '../../app/app_typography.dart';
+import '../../app/space.dart';
+
+class HomeTablet extends StatelessWidget {
+  const HomeTablet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +52,7 @@ class HomeTab extends StatelessWidget {
                   children: [
                     Text(
                       'WELCOME TO MY PORTFOLIO! ',
-                      style: AppText.b2!.copyWith(
-                        fontFamily: 'Montserrat',
-                      ),
+                      style: AppText.b2!.copyWith(fontFamily: 'Montserrat'),
                     ),
                     EntranceFader(
                       offset: const Offset(0, 0),
@@ -65,11 +67,11 @@ class HomeTab extends StatelessWidget {
                 ),
                 Space.y1!,
                 Text(
-                  "Muhammad",
+                  "Alex",
                   style: AppText.h1!.copyWith(fontFamily: 'Montserrat', fontWeight: FontWeight.w100),
                 ),
                 Text(
-                  "Hamza",
+                  "Elpern",
                   style: AppText.h1b!.copyWith(height: 1),
                 ),
                 EntranceFader(
@@ -78,10 +80,7 @@ class HomeTab extends StatelessWidget {
                   duration: const Duration(milliseconds: 800),
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.play_arrow_rounded,
-                        color: AppTheme.c!.primary!,
-                      ),
+                      Icon(Icons.play_arrow_rounded, color: AppTheme.c!.primary!),
                       AnimatedTextKit(
                         animatedTexts: [
                           TyperAnimatedText(

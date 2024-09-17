@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:folio/configs/configs.dart';
+
+import 'app_dimensions.dart';
+import 'app_theme.dart';
+import 'app_typography.dart';
+import 'space.dart';
+import 'ui.dart';
+import 'ui_props.dart';
 
 class App {
   static bool? isLtr;

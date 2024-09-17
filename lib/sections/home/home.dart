@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/responsive/responsive.dart';
 import 'package:folio/sections/home/home_desktop.dart';
 import 'package:folio/sections/home/home_mobile.dart';
-import 'package:folio/sections/home/home_tab.dart';
+import 'package:folio/sections/home/home_tablet.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Responsive(
       mobile: HomeMobile(),
-      tablet: HomeTab(),
+      tablet: HomeTablet(),
       desktop: HomeDesktop(),
     );
   }

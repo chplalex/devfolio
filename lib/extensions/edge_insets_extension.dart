@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'app_dimensions.dart';
-import 'ui.dart';
 
-extension SuperEdgeInsets on EdgeInsets {
+import '../app/app_dimensions.dart';
+import '../app/ui.dart';
+
+extension EdgeInsetsExtension on EdgeInsets {
   EdgeInsets sv() {
     return copyWith(
       top: top + UI.padding!.top,

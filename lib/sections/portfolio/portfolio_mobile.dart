@@ -1,37 +1,39 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:folio/configs/configs.dart';
-import 'package:folio/constants.dart';
-import 'package:folio/utils/project_utils.dart';
+import 'package:folio/app/app_constants.dart';
 import 'package:folio/utils/utils.dart';
-import 'package:folio/widget/custom_text_heading.dart';
-import 'package:folio/widget/project_card.dart';
+import 'package:folio/widget/folio_card.dart';
+import 'package:folio/widget/section_heading.dart';
 
-class PortfolioMobileTab extends StatelessWidget {
-  const PortfolioMobileTab({super.key});
+import '../../app/app_dimensions.dart';
+import '../../app/app_typography.dart';
+import '../../app/space.dart';
+import '../../widget/section_sub_heading.dart';
+
+class PortfolioMobile extends StatelessWidget {
+  const PortfolioMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        const CustomSectionHeading(
-          text: "\nPortfolio",
-        ),
-        const CustomSectionSubHeading(
-          text: "Here are few samples of my previous work :)\n\n",
-        ),
+        const SectionHeading("portfolio_section_header"),
+        const SectionSubHeading("portfolio_section_sub_header"),
         CarouselSlider.builder(
-          itemCount: ProjectUtils.titles.length,
-          itemBuilder: (BuildContext context, int itemIndex, int i) => Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15.0),
-            child: ProjectCard(
-              projectIcon: ProjectUtils.icons[i],
-              projectLink: ProjectUtils.links[i],
-              projectTitle: ProjectUtils.titles[i],
-              projectDescription: ProjectUtils.description[i],
-            ),
-          ),
+          itemCount: projectItems.length,
+          itemBuilder: (_, __, int index) {
+            final item = projectItems[index];
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15.0),
+              child: FolioCard(
+                icon: item.icon,
+                link: item.githubLink,
+                title: item.titleKey,
+                description: item.descriptionKey,
+              ),
+            );
+          },
           options: CarouselOptions(
             height: height * 0.4,
             autoPlay: true,
@@ -48,10 +50,7 @@ class PortfolioMobileTab extends StatelessWidget {
           width: AppDimensions.normalize(50),
           child: OutlinedButton(
             onPressed: () => openURL(StaticUtils.gitHub),
-            child: Text(
-              'See More',
-              style: AppText.l1b,
-            ),
+            child: Text('See More', style: AppText.l1b),
           ),
         )
       ],

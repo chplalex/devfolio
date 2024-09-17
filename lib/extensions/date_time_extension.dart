@@ -1,3 +1,3 @@
-extension SuperDate on DateTime {
+extension DateTimeExtension on DateTime {
   DateTime get today => DateTime(year, month, day);
 }

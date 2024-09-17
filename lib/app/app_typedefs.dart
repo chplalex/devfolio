@@ -1,0 +1,1 @@
+typedef StringMap = Map<String, String>;

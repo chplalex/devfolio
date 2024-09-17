@@ -9,12 +9,8 @@ class ServiceMobile extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        const CustomSectionHeading(
-          text: '\nWhat I can do?',
-        ),
-        const CustomSectionSubHeading(
-          text: 'I may not be perfect but surely I\'m of some use :)\n\n',
-        ),
+        const SectionHeading('services_section_header'),
+        const SectionSubHeading('services_section_sub_header'),
         Space.y!,
         CarouselSlider.builder(
           itemCount: ServicesUtils.servicesTitles.length,

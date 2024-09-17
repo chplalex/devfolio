@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:folio/configs/app_dimensions.dart';
+
+import '../app/app_dimensions.dart';
 
 class ScrollProvider extends ChangeNotifier {
   final scrollController = ScrollController();
@@ -15,9 +16,7 @@ class ScrollProvider extends ChangeNotifier {
                 ? 250
                 : 245;
     controller.animateTo(
-      AppDimensions.normalize(
-        offset * index.toDouble(),
-      ),
+      AppDimensions.normalize(offset * index.toDouble()),
       duration: const Duration(seconds: 1),
       curve: Curves.easeInOut,
     );

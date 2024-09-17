@@ -9,8 +9,8 @@ class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Responsive(
-      mobile: ContactMobileTab(),
-      tablet: ContactMobileTab(),
+      mobile: ContactMobile(),
+      tablet: ContactMobile(),
       desktop: ContactDesktop(),
     );
   }

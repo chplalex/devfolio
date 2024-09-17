@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:folio/configs/configs.dart';
+
+import 'app_dimensions.dart';
+import 'core_theme.dart';
 
 class AppText {
   static TextStyle? btn;

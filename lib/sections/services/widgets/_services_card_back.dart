@@ -26,7 +26,7 @@ class _ServiceCardBackWidget extends StatelessWidget {
             color: AppTheme.c!.primary,
             onPressed: () => showDialog(
                 context: context,
-                builder: (contecxt) => AlertDialog(
+                builder: (context) => AlertDialog(
                       title: Text(
                         "Hire Me!",
                         style: AppText.b2b,

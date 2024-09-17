@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:folio/configs/configs.dart';
-import 'package:folio/constants.dart';
+
+import '../app/space.dart';
+import '../utils/utils.dart';
 
 class CommunityIconBtn extends StatelessWidget {
   final String icon;
@@ -13,6 +14,7 @@ class CommunityIconBtn extends StatelessWidget {
     required this.link,
     required this.height,
   });
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,10 +22,7 @@ class CommunityIconBtn extends StatelessWidget {
       child: InkWell(
         hoverColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        child: Image.asset(
-          icon,
-          height: height,
-        ),
+        child: Image.asset(icon, height: height),
         onTap: () => openURL(link),
       ),
     );

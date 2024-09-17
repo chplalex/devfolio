@@ -1,43 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:folio/configs/configs.dart';
-import 'package:folio/constants.dart';
-import 'package:folio/utils/about_utils.dart';
-
 import 'package:folio/utils/utils.dart';
 import 'package:folio/utils/work_utils.dart';
-import 'package:folio/widget/about_me_data.dart';
+import 'package:folio/widget/about_me_widget.dart';
 import 'package:folio/widget/community_button.dart';
-import 'package:folio/widget/custom_text_heading.dart';
-import 'package:folio/widget/tech_widget.dart';
-
+import 'package:folio/widget/section_heading.dart';
+import 'package:folio/widget/tech_tools_widget.dart';
 import 'package:universal_html/html.dart' as html;
+
+import '../../app/app_dimensions.dart';
+import '../../app/app_theme.dart';
+import '../../app/app_typography.dart';
+import '../../app/space.dart';
+import '../../widget/localized_text.dart';
+import '../../widget/section_sub_heading.dart';
 
 class AboutDesktop extends StatelessWidget {
   const AboutDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
 
     return Container(
       padding: Space.h,
       child: Column(
         children: [
-          const CustomSectionHeading(
-            text: '\nAbout Me',
-          ),
-          const CustomSectionSubHeading(
-            text: 'Get to know me :)',
-          ),
+          const SectionHeading('about_me_section_header'),
+          const SectionSubHeading('about_me_section_sub_header'),
           Space.y1!,
           Row(
             children: [
               Expanded(
-                child: Image.asset(
-                  StaticUtils.coloredPhoto,
-                  height: height * 0.7,
-                ),
+                child: Image.asset(StaticUtils.coloredPhoto, height: height * 0.7),
               ),
               Expanded(
                 flex: width < 1230 ? 2 : 1,
@@ -46,22 +41,12 @@ class AboutDesktop extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Who am I?',
-                        style: AppText.b1!.copyWith(
-                          color: AppTheme.c!.primary,
-                        ),
-                      ),
+                      LocalizedText('about_me_headline_label', style: AppText.b1!.copyWith(color: AppTheme.c!.primary)),
                       Space.y1!,
-                      Text(
-                        AboutUtils.aboutMeHeadline,
-                        style: AppText.b1b!.copyWith(
-                          fontFamily: 'Montserrat',
-                        ),
-                      ),
+                      LocalizedText('about_me_headline', style: AppText.b1b!.copyWith(fontFamily: 'Montserrat')),
                       Space.y!,
-                      Text(
-                        AboutUtils.aboutMeDetail,
+                      LocalizedText(
+                        'about_me_detail',
                         style: AppText.b2!.copyWith(
                           height: 2,
                           letterSpacing: 1.1,
@@ -71,57 +56,28 @@ class AboutDesktop extends StatelessWidget {
                         textAlign: TextAlign.justify,
                       ),
                       Space.y!,
-                      Divider(
-                        color: Colors.grey[800],
-                        thickness: AppDimensions.normalize(0.5),
-                      ),
+                      Divider(color: Colors.grey[800], thickness: AppDimensions.normalize(0.5)),
                       Space.y!,
-                      Text(
-                        'Technologies I have worked with:',
-                        style: AppText.l1!.copyWith(
-                          color: AppTheme.c!.primary,
-                        ),
-                      ),
+                      LocalizedText('tech_tools_label', style: AppText.l1!.copyWith(color: AppTheme.c!.primary)),
                       Space.y!,
-                      Row(
-                        children: kTools
-                            .map((e) => ToolTechWidget(
-                                  techName: e,
-                                ))
-                            .toList(),
-                      ),
+                      const TechToolsWidget(),
                       Space.y!,
-                      Divider(
-                        color: Colors.grey[800],
-                        thickness: AppDimensions.normalize(0.5),
-                      ),
+                      Divider(color: Colors.grey[800], thickness: AppDimensions.normalize(0.5)),
                       const Row(
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              AboutMeData(
-                                data: "Name",
-                                information: "Muhammad Hamza",
-                              ),
-                              AboutMeData(
-                                data: "Age",
-                                information: "24",
-                              ),
+                              AboutMeWidget(labelKey: "full_name_label", valueKey: "full_name"),
+                              AboutMeWidget(labelKey: "age_label", valueKey: "age"),
                             ],
                           ),
                           Spacer(),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              AboutMeData(
-                                data: "Email",
-                                information: "hamza.6.shakeel@gmail.com",
-                              ),
-                              AboutMeData(
-                                data: "From",
-                                information: "Attock, PK",
-                              ),
+                              AboutMeWidget(labelKey: "email_label", valueKey: "email"),
+                              AboutMeWidget(labelKey: "place_label", valueKey: "place"),
                             ],
                           ),
                         ],
@@ -133,11 +89,8 @@ class AboutDesktop extends StatelessWidget {
                             height: AppDimensions.normalize(13),
                             width: AppDimensions.normalize(40),
                             child: OutlinedButton(
-                              onPressed: () =>
-                                  html.window.open(StaticUtils.resume, 'pdf'),
-                              child: const Text(
-                                "Resume",
-                              ),
+                              onPressed: () => html.window.open(StaticUtils.resume, 'pdf'),
+                              child: const LocalizedText("resume_label"),
                             ),
                           ),
                           Space.x1!,
@@ -151,8 +104,7 @@ class AboutDesktop extends StatelessWidget {
                                   child: CommunityIconBtn(
                                     icon: e.value,
                                     link: WorkUtils.communityLinks[e.key],
-                                    height:
-                                        WorkUtils.communityLogoHeight[e.key],
+                                    height: WorkUtils.communityLogoHeight[e.key],
                                   ),
                                 ),
                               )
@@ -162,9 +114,7 @@ class AboutDesktop extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                width: width < 1230 ? width * 0.05 : width * 0.1,
-              ),
+              Container(width: width < 1230 ? width * 0.05 : width * 0.1),
             ],
           )
         ],

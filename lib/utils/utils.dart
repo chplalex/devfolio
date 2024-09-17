@@ -5,6 +5,7 @@ import 'package:folio/sections/home/home.dart';
 import 'package:folio/sections/portfolio/portfolio.dart';
 import 'package:folio/sections/services/services.dart';
 import 'package:folio/widget/footer.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class StaticUtils {
   static const String hi = 'assets/hi.gif';
@@ -46,8 +47,7 @@ class StaticUtils {
     "https://mhmzdev.medium.com"
   ];
 
-  static const String resume =
-      'https://drive.google.com/file/d/1bDNNrkQtNVJbXcdwMSx0crQQvAF_nMwV/view?usp=sharing';
+  static const String resume = 'https://drive.google.com/file/d/1bDNNrkQtNVJbXcdwMSx0crQQvAF_nMwV/view?usp=sharing';
 
   static const String gitHub = 'https://github.com/mhmzdev';
 }
@@ -62,3 +62,6 @@ class BodyUtils {
     Footer(),
   ];
 }
+
+// URL Launcher
+void openURL(String url) => launchUrl(Uri.parse(url));

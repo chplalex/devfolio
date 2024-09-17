@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:folio/configs/configs.dart';
-import 'package:folio/constants.dart';
-import 'package:folio/utils/project_utils.dart';
+import 'package:folio/app/app_constants.dart';
 import 'package:folio/utils/utils.dart';
-import 'package:folio/widget/custom_text_heading.dart';
-import 'package:folio/widget/project_card.dart';
+import 'package:folio/widget/folio_card.dart';
+import 'package:folio/widget/section_heading.dart';
+
+import '../../app/app_dimensions.dart';
+import '../../app/app_typography.dart';
+import '../../app/space.dart';
+import '../../widget/section_sub_heading.dart';
 
 class PortfolioDesktop extends StatefulWidget {
   const PortfolioDesktop({super.key});
@@ -20,29 +23,21 @@ class _PortfolioDesktopState extends State<PortfolioDesktop> {
       padding: Space.h!,
       child: Column(
         children: [
-          const CustomSectionHeading(
-            text: "\nPortfolio",
-          ),
-          const CustomSectionSubHeading(
-            text: "Here are few samples of my previous work :)\n\n",
-          ),
+          const SectionHeading("portfolio_section_header"),
+          const SectionSubHeading("portfolio_section_sub_header"),
           Wrap(
             alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
             runSpacing: AppDimensions.normalize(10),
-            children: ProjectUtils.banners
-                .asMap()
-                .entries
-                .map(
-                  (e) => ProjectCard(
-                    banner: e.value,
-                    projectIcon: ProjectUtils.icons[e.key],
-                    projectLink: ProjectUtils.links[e.key],
-                    projectTitle: ProjectUtils.titles[e.key],
-                    projectDescription: ProjectUtils.description[e.key],
-                  ),
-                )
-                .toList(),
+            children: projectItems
+                .map((item) => FolioCard(
+                      banner: item.banner,
+                      icon: item.icon,
+                      link: item.githubLink,
+                      title: item.titleKey,
+                      description: item.descriptionKey,
+                    ))
+                .toList(growable: false),
           ),
           Space.y2!,
           SizedBox(
@@ -50,10 +45,7 @@ class _PortfolioDesktopState extends State<PortfolioDesktop> {
             width: AppDimensions.normalize(50),
             child: OutlinedButton(
               onPressed: () => openURL(StaticUtils.gitHub),
-              child: Text(
-                'See More',
-                style: AppText.l1b,
-              ),
+              child: Text('See More', style: AppText.l1b),
             ),
           )
         ],

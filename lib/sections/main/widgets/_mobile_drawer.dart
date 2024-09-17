@@ -32,8 +32,7 @@ class _MobileDrawer extends StatelessWidget {
                   inactiveTrackColor: Colors.grey,
                   value: appProvider.isDark,
                   onChanged: (value) {
-                    appProvider
-                        .setTheme(value ? ThemeMode.dark : ThemeMode.light);
+                    appProvider.setTheme(value ? ThemeMode.dark : ThemeMode.light);
                   },
                   activeColor: AppTheme.c!.primary,
                 ),
@@ -53,10 +52,7 @@ class _MobileDrawer extends StatelessWidget {
                             NavBarUtils.icons[e.key],
                             color: AppTheme.c!.primary,
                           ),
-                          title: Text(
-                            e.value,
-                            style: AppText.l1,
-                          ),
+                          title: Text(e.value, style: AppText.l1),
                         ),
                       ),
                     ),
@@ -66,17 +62,11 @@ class _MobileDrawer extends StatelessWidget {
                 child: MaterialButton(
                   hoverColor: AppTheme.c!.primary!.withAlpha(150),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      side: BorderSide(color: AppTheme.c!.primary!)),
+                      borderRadius: BorderRadius.circular(5.0), side: BorderSide(color: AppTheme.c!.primary!)),
                   onPressed: () => openURL(StaticUtils.resume),
                   child: const ListTile(
-                    leading: Icon(
-                      Icons.book,
-                      color: Colors.red,
-                    ),
-                    title: Text(
-                      'RESUME',
-                    ),
+                    leading: Icon(Icons.book, color: Colors.red),
+                    title: Text('RESUME'),
                   ),
                 ),
               ),
