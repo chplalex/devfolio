@@ -4,15 +4,13 @@ import 'package:folio/sections/home/home_desktop.dart';
 import 'package:folio/sections/home/home_mobile.dart';
 import 'package:folio/sections/home/home_tablet.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const Responsive(
-      mobile: HomeMobile(),
-      tablet: HomeTablet(),
-      desktop: HomeDesktop(),
+  Widget build(BuildContext context) => const Responsive(
+        mobile: HomeMobile(),
+        tablet: HomeTablet(),
+        desktop: HomeDesktop(),
     );
-  }
 }

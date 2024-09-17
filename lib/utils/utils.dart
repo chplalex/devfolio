@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:folio/sections/about/about.dart';
 import 'package:folio/sections/contact/contact.dart';
 import 'package:folio/sections/home/home.dart';
@@ -53,8 +52,8 @@ class StaticUtils {
 }
 
 class BodyUtils {
-  static const List<Widget> views = [
-    HomePage(),
+  static const views = [
+    Home(),
     About(),
     Services(),
     Portfolio(),

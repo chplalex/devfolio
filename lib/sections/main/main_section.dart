@@ -1,28 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:folio/animations/entrance_fader.dart';
-import 'package:folio/provider/app_provider.dart';
+import 'package:folio/app/app_extensions.dart';
 import 'package:folio/provider/drawer_provider.dart';
-import 'package:folio/provider/scroll_provider.dart';
-import 'package:folio/responsive/responsive.dart';
-import 'package:folio/utils/navbar_utils.dart';
-import 'package:folio/utils/utils.dart';
 import 'package:folio/widget/arrow_on_top.dart';
-import 'package:folio/widget/navbar_actions_button.dart';
-import 'package:folio/widget/navbar_logo.dart';
 import 'package:provider/provider.dart';
-import 'package:universal_html/html.dart' as html;
 
 import '../../app/app.dart';
-import '../../app/app_dimensions.dart';
-import '../../app/app_theme.dart';
-import '../../app/app_typography.dart';
-import '../../app/space.dart';
-
-part 'widgets/_body.dart';
-
-part 'widgets/_mobile_drawer.dart';
-
-part 'widgets/_navbar_desktop.dart';
+import 'widgets/body.dart';
+import 'widgets/mobile_drawer.dart';
+import 'widgets/nav_bar_desktop.dart';
+import 'widgets/nav_bar_tablet.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -40,15 +26,13 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       key: drawerProvider.key,
       extendBodyBehindAppBar: true,
-      drawer: !Responsive.isDesktop(context) ? const _MobileDrawer() : null,
+      drawer: !context.isDesktop ? const MobileDrawer() : null,
       body: SafeArea(
         child: Stack(
           children: [
-            const _Body(),
+            const Body(),
             const ArrowOnTop(),
-            Responsive.isTablet(context) || Responsive.isMobile(context)
-                ? const _NavBarTablet()
-                : const _NavbarDesktop(),
+            context.isTablet || context.isMobile ? const NavBarTablet() : const NavbarDesktop(),
           ],
         ),
       ),

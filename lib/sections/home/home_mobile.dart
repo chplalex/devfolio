@@ -1,6 +1,5 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-
+import 'package:folio/sections/home/home_animated_text_kit.dart';
 import 'package:folio/utils/utils.dart';
 import 'package:folio/widget/social_links.dart';
 
@@ -8,13 +7,14 @@ import '../../app/app_dimensions.dart';
 import '../../app/app_theme.dart';
 import '../../app/app_typography.dart';
 import '../../app/space.dart';
+import '../../widget/localized_text.dart';
 
 class HomeMobile extends StatelessWidget {
   const HomeMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
 
     return SizedBox(
       height: size.height * 1.02,
@@ -44,53 +44,22 @@ class HomeMobile extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      "HEY THERE! ",
-                      style: AppText.b2!.copyWith(fontFamily: 'Montserrat'),
-                    ),
+                    LocalizedText("home_greeting", style: AppText.b2!.copyWith(fontFamily: 'Montserrat')),
                     Space.x!,
                     Image.asset(StaticUtils.hi, height: AppDimensions.normalize(10)),
                   ],
                 ),
                 Space.y!,
-                Text(
-                  "Alex",
-                  style: AppText.h3!.copyWith(
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w100,
-                  ),
+                LocalizedText(
+                  "first_name",
+                  style: AppText.h3!.copyWith(fontFamily: 'Montserrat', fontWeight: FontWeight.w100),
                 ),
-                Text(
-                  "Elpern",
-                  style: AppText.h3b!.copyWith(
-                    height: 1,
-                  ),
-                ),
+                LocalizedText("last_name", style: AppText.h3b!.copyWith(height: 1)),
                 Space.y!,
                 Row(
                   children: [
                     Icon(Icons.play_arrow_rounded, color: AppTheme.c!.primary!),
-                    AnimatedTextKit(
-                      animatedTexts: [
-                        TyperAnimatedText(
-                          ' Flutter Developer',
-                          speed: const Duration(milliseconds: 50),
-                          textStyle: AppText.b1,
-                        ),
-                        TyperAnimatedText(
-                          ' UI/UX Enthusiast',
-                          speed: const Duration(milliseconds: 50),
-                          textStyle: AppText.b1,
-                        ),
-                        TyperAnimatedText(
-                          ' A friend :)',
-                          speed: const Duration(milliseconds: 50),
-                          textStyle: AppText.b1,
-                        ),
-                      ],
-                      repeatForever: true,
-                      isRepeatingAnimation: true,
-                    ),
+                    const HomeAnimatedTextKit(),
                   ],
                 ),
                 Space.y!,

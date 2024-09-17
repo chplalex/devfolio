@@ -45,6 +45,15 @@
   ["project_title_09", "File Transfer Protocol"],
   ["project_title_10", "My Order"],
   ["project_title_11", "Hidev"],
+  ["home_greeting", "WELCOME THERE!"],
+  ["home_animated_text_key_1", "Flutter Multiplatform Developer"],
+  ["home_animated_text_key_2", "Android Native Developer"],
+  ["home_animated_text_key_3", "Clean Architecture Enthusiast"],
+  ["home_animated_text_key_4", "A friend :)"],
+  ["", ""],
+  ["", ""],
+  ["", ""],
+  ["", ""],
   ["", ""],
   ["", ""]
 ]

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:folio/app/app_extensions.dart';
 import 'package:folio/provider/app_provider.dart';
-import 'package:folio/responsive/responsive.dart';
 import 'package:folio/utils/utils.dart';
 import 'package:provider/provider.dart';
 
@@ -22,16 +22,16 @@ class SocialLinks extends StatelessWidget {
           .entries
           .map(
             (e) => Padding(
-              padding: Responsive.isMobile(context) ? Space.all(0.2, 0) : Space.h!,
+              padding: context.isMobile ? Space.all(0.2, 0) : Space.h!,
               child: IconButton(
                 highlightColor: Colors.white54,
                 splashRadius: AppDimensions.normalize(12),
                 icon: Image.network(
                   e.value,
                   color: appProvider.isDark ? Colors.white : Colors.black,
-                  height: Responsive.isMobile(context) ? AppDimensions.normalize(10) : AppDimensions.normalize(15),
+                  height: context.isMobile ? AppDimensions.normalize(10) : AppDimensions.normalize(15),
                 ),
-                iconSize: Responsive.isMobile(context) ? AppDimensions.normalize(10) : AppDimensions.normalize(15),
+                iconSize: context.isMobile ? AppDimensions.normalize(10) : AppDimensions.normalize(15),
                 onPressed: () => openURL(StaticUtils.socialLinks[e.key]),
                 hoverColor: AppTheme.c!.primary!,
               ),

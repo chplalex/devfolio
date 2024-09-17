@@ -1,7 +1,19 @@
-part of '../main_section.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:universal_html/html.dart' as html;
 
-class _NavbarDesktop extends StatelessWidget {
-  const _NavbarDesktop();
+import '../../../animations/entrance_fader.dart';
+import '../../../app/app_theme.dart';
+import '../../../app/app_typography.dart';
+import '../../../app/space.dart';
+import '../../../provider/app_provider.dart';
+import '../../../utils/navbar_utils.dart';
+import '../../../utils/utils.dart';
+import '../../../widget/nav_bar_actions_button.dart';
+import '../../../widget/nav_bar_logo.dart';
+
+class NavbarDesktop extends StatelessWidget {
+  const NavbarDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,32 +71,6 @@ class _NavbarDesktop extends StatelessWidget {
             activeColor: AppTheme.c!.primary!,
           ),
           Space.x!,
-        ],
-      ),
-    );
-  }
-}
-
-class _NavBarTablet extends StatelessWidget {
-  const _NavBarTablet();
-
-  @override
-  Widget build(BuildContext context) {
-    final drawerProvider = Provider.of<DrawerProvider>(context);
-    return Padding(
-      padding: Space.v!,
-      child: Row(
-        children: [
-          Space.x1!,
-          IconButton(
-            highlightColor: Colors.white54,
-            splashRadius: AppDimensions.normalize(10),
-            onPressed: () => drawerProvider.key.currentState!.openDrawer(),
-            icon: const Icon(Icons.menu),
-          ),
-          Space.xm!,
-          const NavBarLogo(),
-          Space.x1!,
         ],
       ),
     );

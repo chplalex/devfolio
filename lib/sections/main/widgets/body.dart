@@ -1,7 +1,11 @@
-part of '../main_section.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
 
-class _Body extends StatelessWidget {
-  const _Body();
+import '../../../provider/scroll_provider.dart';
+import '../../../utils/utils.dart';
+
+class Body extends StatelessWidget {
+  const Body({super.key});
 
   @override
   Widget build(BuildContext context) {
