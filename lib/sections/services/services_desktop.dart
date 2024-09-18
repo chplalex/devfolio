@@ -1,4 +1,11 @@
-part of 'services.dart';
+import 'package:flip_card/flip_card.dart';
+import 'package:flutter/material.dart';
+
+import '../../app/space.dart';
+import '../../utils/services_utils.dart';
+import '../../widget/section_heading.dart';
+import '../../widget/section_sub_heading.dart';
+import 'widgets/services_card.dart';
 
 class ServiceDesktop extends StatefulWidget {
   const ServiceDesktop({super.key});
@@ -12,8 +19,8 @@ class ServiceDesktopState extends State<ServiceDesktop> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
 
     return Container(
       padding: Space.hf(4),
@@ -31,7 +38,7 @@ class ServiceDesktopState extends State<ServiceDesktop> {
                 .asMap()
                 .entries
                 .map(
-                  (e) => _ServiceCard(
+                  (e) => ServiceCard(
                     serviceIcon: ServicesUtils.servicesIcons[e.key],
                     serviceTitle: ServicesUtils.servicesTitles[e.key],
                     serviceDescription: ServicesUtils.servicesDescription[e.key],

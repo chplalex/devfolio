@@ -1,7 +1,16 @@
-part of '../services.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
-class _ServiceCardBackWidget extends StatelessWidget {
-  const _ServiceCardBackWidget({required this.serviceDesc, required this.serviceTitle});
+import '../../../app/app_dimensions.dart';
+import '../../../app/app_theme.dart';
+import '../../../app/app_typography.dart';
+import '../../../app/space.dart';
+import '../../../provider/app_provider.dart';
+import '../../../utils/utils.dart';
+
+class ServiceCardBackWidget extends StatelessWidget {
+  const ServiceCardBackWidget({super.key, required this.serviceDesc, required this.serviceTitle});
 
   final String serviceDesc;
   final String serviceTitle;
@@ -12,13 +21,8 @@ class _ServiceCardBackWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          serviceDesc,
-          style: AppText.l1,
-        ),
-        Divider(
-          color: appProvider.isDark ? Colors.white : Colors.black38,
-        ),
+        Text(serviceDesc, style: AppText.l1),
+        Divider(color: appProvider.isDark ? Colors.white : Colors.black38),
         SizedBox(
           height: AppDimensions.normalize(14),
           width: AppDimensions.normalize(60),
@@ -27,10 +31,7 @@ class _ServiceCardBackWidget extends StatelessWidget {
             onPressed: () => showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
-                      title: Text(
-                        "Hire Me!",
-                        style: AppText.b2b,
-                      ),
+                      title: Text("Hire Me!", style: AppText.b2b),
                       actions: [
                         TextButton(
                           onPressed: () => Navigator.pop(context),
@@ -43,9 +44,7 @@ class _ServiceCardBackWidget extends StatelessWidget {
                         children: [
                           MaterialButton(
                             height: 40.0,
-                            onPressed: () => openURL(
-                              'https://api.whatsapp.com/send?phone=923460159889',
-                            ),
+                            onPressed: () => openURL('https://api.whatsapp.com/send?phone=923460159889'),
                             color: const Color(0xff34CB62),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -55,21 +54,14 @@ class _ServiceCardBackWidget extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                                 Space.x!,
-                                Text(
-                                  'WhatsApp',
-                                  style: AppText.l1!.copyWith(
-                                    color: Colors.white,
-                                  ),
-                                ),
+                                Text('WhatsApp', style: AppText.l1!.copyWith(color: Colors.white)),
                               ],
                             ),
                           ),
                           Space.y1!,
                           MaterialButton(
                             height: 40.0,
-                            onPressed: () => openURL(
-                              'https://www.upwork.com/freelancers/~0197b0f6aaeba9675f',
-                            ),
+                            onPressed: () => openURL('https://www.upwork.com/freelancers/~0197b0f6aaeba9675f'),
                             color: const Color(0xff13A800),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -80,24 +72,14 @@ class _ServiceCardBackWidget extends StatelessWidget {
                                   color: Colors.white,
                                 ),
                                 Space.x!,
-                                Text(
-                                  'Upwork',
-                                  style: AppText.l1!.copyWith(
-                                    color: Colors.white,
-                                  ),
-                                ),
+                                Text('Upwork', style: AppText.l1!.copyWith(color: Colors.white)),
                               ],
                             ),
                           ),
                         ],
                       ),
                     )),
-            child: Text(
-              'HIRE ME!',
-              style: AppText.b2!.copyWith(
-                color: Colors.white,
-              ),
-            ),
+            child: Text('HIRE ME!', style: AppText.b2!.copyWith(color: Colors.white)),
           ),
         )
       ],

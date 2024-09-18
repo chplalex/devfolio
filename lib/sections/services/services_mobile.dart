@@ -1,12 +1,19 @@
-part of 'services.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+
+import '../../app/space.dart';
+import '../../utils/services_utils.dart';
+import '../../widget/section_heading.dart';
+import '../../widget/section_sub_heading.dart';
+import 'widgets/services_card.dart';
 
 class ServiceMobile extends StatelessWidget {
   const ServiceMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         const SectionHeading('services_section_header'),
@@ -16,7 +23,7 @@ class ServiceMobile extends StatelessWidget {
           itemCount: ServicesUtils.servicesTitles.length,
           itemBuilder: (BuildContext context, int itemIndex, int i) => Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: _ServiceCard(
+            child: ServiceCard(
               serviceIcon: ServicesUtils.servicesIcons[i],
               serviceTitle: ServicesUtils.servicesTitles[i],
               serviceDescription: ServicesUtils.servicesDescription[i],

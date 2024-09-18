@@ -1,21 +1,32 @@
-part of '../services.dart';
+import 'package:flip_card/flip_card.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:folio/sections/services/widgets/services_card_back.dart';
+import 'package:provider/provider.dart';
 
-class _ServiceCard extends StatefulWidget {
+import '../../../app/app_dimensions.dart';
+import '../../../app/app_theme.dart';
+import '../../../app/space.dart';
+import '../../../provider/app_provider.dart';
+import '../../../utils/utils.dart';
+
+class ServiceCard extends StatefulWidget {
   final String serviceIcon;
   final String serviceTitle;
   final String serviceDescription;
 
-  const _ServiceCard({
+  const ServiceCard({
+    super.key,
     required this.serviceIcon,
     required this.serviceTitle,
     required this.serviceDescription,
   });
 
   @override
-  _ServiceCardState createState() => _ServiceCardState();
+  State<ServiceCard> createState() => _ServiceCardState();
 }
 
-class _ServiceCardState extends State<_ServiceCard> {
+class _ServiceCardState extends State<ServiceCard> {
   GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
   bool isHover = false;
 
@@ -42,7 +53,7 @@ class _ServiceCardState extends State<_ServiceCard> {
         }
       },
       child: FlipCard(
-        flipOnTouch: kIsWeb ? false : true,
+        flipOnTouch: !kIsWeb,
         key: cardKey,
         back: Container(
           width: AppDimensions.normalize(100),
@@ -67,7 +78,7 @@ class _ServiceCardState extends State<_ServiceCard> {
                     )
                   ],
           ),
-          child: _ServiceCardBackWidget(
+          child: ServiceCardBackWidget(
             serviceDesc: widget.serviceDescription,
             serviceTitle: widget.serviceTitle,
           ),

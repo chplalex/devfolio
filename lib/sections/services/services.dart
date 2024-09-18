@@ -1,28 +1,8 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flip_card/flip_card.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:folio/provider/app_provider.dart';
-import 'package:folio/responsive/responsive.dart';
-import 'package:folio/utils/services_utils.dart';
-import 'package:folio/utils/utils.dart';
-import 'package:folio/widget/section_heading.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:provider/provider.dart';
 
-import '../../app/app_dimensions.dart';
-import '../../app/app_theme.dart';
-import '../../app/app_typography.dart';
-import '../../app/space.dart';
-import '../../widget/section_sub_heading.dart';
-
-part 'services_desktop.dart';
-
-part 'services_mobile.dart';
-
-part 'widgets/_services_card.dart';
-
-part 'widgets/_services_card_back.dart';
+import '../../responsive/responsive.dart';
+import 'services_desktop.dart';
+import 'services_mobile.dart';
 
 class Services extends StatelessWidget {
   const Services({super.key});

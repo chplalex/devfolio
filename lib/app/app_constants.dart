@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/models/contact_item.dart';
 import 'package:folio/models/project_item.dart';
+import 'package:folio/models/service_item.dart';
 
 final kTools = [
   "Flutter",
@@ -84,3 +85,29 @@ const projectItems = [
       descriptionKey: 'project_description_11',
       githubLink: 'https://github.com/mhmzdev/Hidev_Web'),
 ];
+
+const _servicesData = [
+  (icon: "assets/services/app.png", descriptionsCount: 4),
+  (icon: "assets/services/ui.png", descriptionsCount: 5),
+  (icon: "assets/services/rapid.png", descriptionsCount: 2),
+  (icon: "assets/services/blog.png", descriptionsCount: 4),
+  (icon: "assets/services/open.png", descriptionsCount: 3),
+];
+
+final serviceItems = List.generate(
+  _servicesData.length,
+  (indexService) {
+    final serviceData = _servicesData[indexService];
+    final descriptionKeys = List.generate(
+      serviceData.descriptionsCount,
+      (indexDescription) => 'service_${indexService}_description_$indexDescription',
+      growable: false,
+    );
+    return ServiceItem(
+      icon: serviceData.icon,
+      titleKey: 'service_${indexService}_title',
+      descriptionKeys: descriptionKeys,
+    );
+  },
+  growable: false,
+);
