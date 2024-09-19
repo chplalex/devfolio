@@ -10,9 +10,9 @@ class Services extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Responsive(
-      mobile: ServiceMobile(),
-      tablet: ServiceMobile(),
-      desktop: ServiceDesktop(),
+      mobile: ServicesMobile(),
+      tablet: ServicesMobile(),
+      desktop: ServicesDesktop(),
     );
   }
 }

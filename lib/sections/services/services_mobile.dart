@@ -1,14 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:folio/app/app_constants.dart';
 
 import '../../app/space.dart';
-import '../../utils/services_utils.dart';
+import '../../models/service_item.dart';
 import '../../widget/section_heading.dart';
 import '../../widget/section_sub_heading.dart';
 import 'widgets/services_card.dart';
 
-class ServiceMobile extends StatelessWidget {
-  const ServiceMobile({super.key});
+class ServicesMobile extends StatelessWidget {
+  const ServicesMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +21,8 @@ class ServiceMobile extends StatelessWidget {
         const SectionSubHeading('services_section_sub_header'),
         Space.y!,
         CarouselSlider.builder(
-          itemCount: ServicesUtils.servicesTitles.length,
-          itemBuilder: (BuildContext context, int itemIndex, int i) => Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: ServiceCard(
-              serviceIcon: ServicesUtils.servicesIcons[i],
-              serviceTitle: ServicesUtils.servicesTitles[i],
-              serviceDescription: ServicesUtils.servicesDescription[i],
-            ),
-          ),
+          itemCount: serviceItems.length,
+          itemBuilder: (BuildContext context, _, int index) => _serviceItem(serviceItems[index]),
           options: CarouselOptions(
             viewportFraction: 0.65,
             height: width < 450 ? height * 0.4 : height * 0.4,
@@ -43,4 +37,13 @@ class ServiceMobile extends StatelessWidget {
       ],
     );
   }
+
+  Padding _serviceItem(ServiceItem item) => Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0),
+        child: ServiceCard(
+          icon: item.icon,
+          titleKey: item.titleKey,
+          descriptionKeys: item.descriptionKeys,
+        ),
+      );
 }

@@ -13,16 +13,16 @@ class TechToolsWidget extends StatelessWidget {
         alignment: WrapAlignment.center,
         crossAxisAlignment: WrapCrossAlignment.center,
         runAlignment: WrapAlignment.center,
-        spacing: 8.0,
-        runSpacing: 8.0,
-        children: kTools.map((e) => _buildItem(techName: e)).toList(growable: false),
+        spacing: AppDimensions.normalize(4.0),
+        runSpacing: AppDimensions.normalize(4.0),
+        children: techTools.map((name) => _buildItem(text: name)).toList(growable: false),
       );
 
-  Widget _buildItem({required String techName}) => Row(
+  Widget _buildItem({required String text}) => Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.play_arrow, color: AppTheme.c!.primary, size: AppDimensions.normalize(6)),
-          Text(techName, style: AppText.l1b)
+          Icon(Icons.play_arrow, color: AppTheme.c!.primary, size: AppDimensions.normalize(6.0)),
+          Text(text, style: AppText.l1b)
         ],
       );
 }

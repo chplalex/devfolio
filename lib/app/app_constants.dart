@@ -3,7 +3,7 @@ import 'package:folio/models/contact_item.dart';
 import 'package:folio/models/project_item.dart';
 import 'package:folio/models/service_item.dart';
 
-final kTools = [
+final techTools = [
   "Flutter",
   "Dart",
   "Android SDK",
@@ -111,3 +111,9 @@ final serviceItems = List.generate(
   },
   growable: false,
 );
+
+class Contacts {
+  static const email = 'mailto:alex.elpern@gmail.com';
+  static const whatsapp = 'https://api.whatsapp.com/send?phone=9728258017';
+  static const telegram = 'https://t.me/chepel_alexander';
+}

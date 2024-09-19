@@ -1,20 +1,20 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 
+import '../../app/app_constants.dart';
 import '../../app/space.dart';
-import '../../utils/services_utils.dart';
 import '../../widget/section_heading.dart';
 import '../../widget/section_sub_heading.dart';
 import 'widgets/services_card.dart';
 
-class ServiceDesktop extends StatefulWidget {
-  const ServiceDesktop({super.key});
+class ServicesDesktop extends StatefulWidget {
+  const ServicesDesktop({super.key});
 
   @override
-  ServiceDesktopState createState() => ServiceDesktopState();
+  ServicesDesktopState createState() => ServicesDesktopState();
 }
 
-class ServiceDesktopState extends State<ServiceDesktop> {
+class ServicesDesktopState extends State<ServicesDesktop> {
   GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
 
   @override
@@ -34,14 +34,12 @@ class ServiceDesktopState extends State<ServiceDesktop> {
             runSpacing: height * 0.05,
             alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
-            children: ServicesUtils.servicesIcons
-                .asMap()
-                .entries
+            children: serviceItems
                 .map(
-                  (e) => ServiceCard(
-                    serviceIcon: ServicesUtils.servicesIcons[e.key],
-                    serviceTitle: ServicesUtils.servicesTitles[e.key],
-                    serviceDescription: ServicesUtils.servicesDescription[e.key],
+                  (item) => ServiceCard(
+                    icon: item.icon,
+                    titleKey: item.titleKey,
+                    descriptionKeys: item.descriptionKeys,
                   ),
                 )
                 .toList(),

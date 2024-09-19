@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:folio/sections/services/widgets/hire_me_popup.dart';
+import 'package:folio/widget/localized_text.dart';
 import 'package:provider/provider.dart';
 
 import '../../../app/app_dimensions.dart';
 import '../../../app/app_theme.dart';
 import '../../../app/app_typography.dart';
-import '../../../app/space.dart';
 import '../../../provider/app_provider.dart';
-import '../../../utils/utils.dart';
 
 class ServiceCardBackWidget extends StatelessWidget {
-  const ServiceCardBackWidget({super.key, required this.serviceDesc, required this.serviceTitle});
+  final List<String> descriptionKeys;
 
-  final String serviceDesc;
-  final String serviceTitle;
+  const ServiceCardBackWidget({super.key, required this.descriptionKeys});
 
   @override
   Widget build(BuildContext context) {
@@ -21,65 +19,16 @@ class ServiceCardBackWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(serviceDesc, style: AppText.l1),
-        Divider(color: appProvider.isDark ? Colors.white : Colors.black38),
+        ...descriptionKeys.map((key) => LocalizedText(key, style: AppText.l1)),
+        Divider(color: appProvider.isDark ? Colors.white : Colors.black38, height: AppDimensions.normalize(8.0)),
         SizedBox(
           height: AppDimensions.normalize(14),
           width: AppDimensions.normalize(60),
           child: MaterialButton(
             color: AppTheme.c!.primary,
-            onPressed: () => showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                      title: Text("Hire Me!", style: AppText.b2b),
-                      actions: [
-                        TextButton(
-                          onPressed: () => Navigator.pop(context),
-                          child: const Text("Back"),
-                        )
-                      ],
-                      content: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          MaterialButton(
-                            height: 40.0,
-                            onPressed: () => openURL('https://api.whatsapp.com/send?phone=923460159889'),
-                            color: const Color(0xff34CB62),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                const Icon(
-                                  FontAwesomeIcons.whatsapp,
-                                  color: Colors.white,
-                                ),
-                                Space.x!,
-                                Text('WhatsApp', style: AppText.l1!.copyWith(color: Colors.white)),
-                              ],
-                            ),
-                          ),
-                          Space.y1!,
-                          MaterialButton(
-                            height: 40.0,
-                            onPressed: () => openURL('https://www.upwork.com/freelancers/~0197b0f6aaeba9675f'),
-                            color: const Color(0xff13A800),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Image.network(
-                                  'https://img.icons8.com/ios-filled/50/000000/upwork.png',
-                                  height: 35.0,
-                                  color: Colors.white,
-                                ),
-                                Space.x!,
-                                Text('Upwork', style: AppText.l1!.copyWith(color: Colors.white)),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )),
-            child: Text('HIRE ME!', style: AppText.b2!.copyWith(color: Colors.white)),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppDimensions.normalize(6.0))),
+            onPressed: () => const HireMePopup().show(context),
+            child: LocalizedText('hire_me_label', style: AppText.b2!.copyWith(color: Colors.white)),
           ),
         )
       ],

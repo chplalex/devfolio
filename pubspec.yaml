@@ -40,11 +40,11 @@ flutter:
 
   assets:
     - assets/
-    - assets/work/
     - assets/photos/
-    - assets/services/
     - assets/projects/
+    - assets/services/
     - assets/tables/
+    - assets/work/
 
   fonts:
     - family: Agustina
