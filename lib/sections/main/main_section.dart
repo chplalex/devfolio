@@ -26,13 +26,13 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       key: drawerProvider.key,
       extendBodyBehindAppBar: true,
-      drawer: !context.isDesktop ? const MobileDrawer() : null,
+      drawer: context.isDesktop ? null : const MobileDrawer(),
       body: SafeArea(
         child: Stack(
           children: [
             const Body(),
             const ArrowOnTop(),
-            context.isTablet || context.isMobile ? const NavBarTablet() : const NavbarDesktop(),
+            context.isDesktop ? const NavBarDesktop() : const NavBarTablet(),
           ],
         ),
       ),

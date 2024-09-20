@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:folio/app/app_constants.dart';
 import 'package:provider/provider.dart';
 import 'package:universal_html/html.dart' as html;
 
@@ -7,13 +8,13 @@ import '../../../app/app_theme.dart';
 import '../../../app/app_typography.dart';
 import '../../../app/space.dart';
 import '../../../provider/app_provider.dart';
-import '../../../utils/navbar_utils.dart';
 import '../../../utils/utils.dart';
+import '../../../widget/localized_text.dart';
 import '../../../widget/nav_bar_actions_button.dart';
 import '../../../widget/nav_bar_logo.dart';
 
-class NavbarDesktop extends StatelessWidget {
-  const NavbarDesktop({super.key});
+class NavBarDesktop extends StatelessWidget {
+  const NavBarDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +27,8 @@ class NavbarDesktop extends StatelessWidget {
         children: [
           const NavBarLogo(),
           Space.xm!,
-          ...NavBarUtils.names.asMap().entries.map(
-                (e) => NavBarActionButton(
-                  label: e.value,
-                  index: e.key,
-                ),
+          ...drawerItems.asMap().entries.map(
+                (entry) => NavBarActionButton(labelKey: entry.value.nameKey, index: entry.key),
               ),
           EntranceFader(
             offset: const Offset(0, -10),
@@ -44,18 +42,10 @@ class NavbarDesktop extends StatelessWidget {
                   color: AppTheme.c!.primary!,
                 ),
               ),
-              onPressed: () {
-                html.window.open(
-                  StaticUtils.resume,
-                  "pdf",
-                );
-              },
+              onPressed: () => html.window.open(StaticUtils.resume, "pdf"),
               child: Padding(
                 padding: Space.all(1.25, 0.45),
-                child: Text(
-                  'RESUME',
-                  style: AppText.l1b,
-                ),
+                child: LocalizedText('resume_label', style: AppText.l1b),
               ),
             ),
           ),
@@ -63,11 +53,7 @@ class NavbarDesktop extends StatelessWidget {
           Switch(
             inactiveTrackColor: Colors.grey,
             value: appProvider.isDark,
-            onChanged: (value) {
-              appProvider.setTheme(
-                !value ? ThemeMode.light : ThemeMode.dark,
-              );
-            },
+            onChanged: (value) => appProvider.setTheme(!value ? ThemeMode.light : ThemeMode.dark),
             activeColor: AppTheme.c!.primary!,
           ),
           Space.x!,

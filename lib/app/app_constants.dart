@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:folio/models/contact_item.dart';
+import 'package:folio/models/drawer_item.dart';
 import 'package:folio/models/project_item.dart';
 import 'package:folio/models/service_item.dart';
 
@@ -117,3 +118,20 @@ class Contacts {
   static const whatsapp = 'https://api.whatsapp.com/send?phone=9728258017';
   static const telegram = 'https://t.me/chepel_alexander';
 }
+
+const _drawerData = [
+  (nameKey: 'section_name_home', iconData: Icons.home),
+  (nameKey: 'section_name_about', iconData: Icons.person),
+  (nameKey: 'section_name_services', iconData: Icons.work),
+  (nameKey: 'section_name_projects', iconData: Icons.build),
+  (nameKey: 'section_name_contact', iconData: Icons.contact_page),
+];
+
+final drawerItems = List.generate(
+  _drawerData.length,
+  (index) {
+    final item = _drawerData[index];
+    return DrawerItem(nameKey: item.nameKey, iconData: item.iconData);
+  },
+  growable: false,
+);

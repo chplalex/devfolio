@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/animations/entrance_fader.dart';
 import 'package:folio/provider/scroll_provider.dart';
+import 'package:folio/widget/localized_text.dart';
 import 'package:provider/provider.dart';
 
 import '../app/app_theme.dart';
@@ -8,11 +9,12 @@ import '../app/app_typography.dart';
 import '../app/space.dart';
 
 class NavBarActionButton extends StatelessWidget {
-  final String label;
+  final String labelKey;
   final int index;
+
   const NavBarActionButton({
     super.key,
-    required this.label,
+    required this.labelKey,
     required this.index,
   });
 
@@ -26,22 +28,15 @@ class NavBarActionButton extends StatelessWidget {
       duration: const Duration(milliseconds: 250),
       child: Container(
         margin: Space.h!,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.0),
-        ),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.0)),
         child: MaterialButton(
           splashColor: Colors.white54,
           highlightColor: Colors.white54,
           hoverColor: AppTheme.c!.primary,
-          onPressed: () {
-            scrollProvider.scroll(index);
-          },
+          onPressed: () => scrollProvider.scroll(index),
           child: Padding(
             padding: Space.all(0.5, 0.45),
-            child: Text(
-              label,
-              style: AppText.l1,
-            ),
+            child: LocalizedText(labelKey, style: AppText.l1),
           ),
         ),
       ),
