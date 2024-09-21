@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:folio/app/app_enums.dart';
 import 'package:folio/provider/app_provider.dart';
 import 'package:folio/provider/drawer_provider.dart';
 import 'package:folio/provider/scroll_provider.dart';
 import 'package:folio/sections/main/main_section.dart';
-import 'package:folio/app/app_enums.dart';
 import 'package:provider/provider.dart';
 import 'package:url_strategy/url_strategy.dart';
 
@@ -25,14 +25,9 @@ Future<void> setupDI() {
   return AppDI.setupAsync();
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  MyAppState createState() => MyAppState();
-}
-
-class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

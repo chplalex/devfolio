@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:folio/animations/bottom_animation.dart';
+import 'package:folio/animations/widget_animator.dart';
 import 'package:folio/widget/folio_card.dart';
 import 'package:folio/widget/section_heading.dart';
 

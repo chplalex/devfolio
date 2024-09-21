@@ -2,21 +2,45 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-class Animator extends StatefulWidget {
+Timer? _timer;
+Duration _duration = const Duration();
+
+Duration _wait() {
+  if (_timer == null || !_timer!.isActive) {
+    _timer = Timer(const Duration(microseconds: 120), () {
+      _duration = const Duration();
+    });
+  }
+  _duration += const Duration(milliseconds: 100);
+  return _duration;
+}
+
+class WidgetAnimator extends StatelessWidget {
+  final Widget child;
+
+  const WidgetAnimator({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return _Animator(key, child, _wait());
+  }
+}
+
+class _Animator extends StatefulWidget {
   final Widget? child;
   final Duration? time;
 
-  const Animator(
-    Key? key,
-    this.child,
-    this.time,
-  ) : super(key: key);
+  const _Animator(
+      Key? key,
+      this.child,
+      this.time,
+      ) : super(key: key);
 
   @override
-  AnimatorState createState() => AnimatorState();
+  _AnimatorState createState() => _AnimatorState();
 }
 
-class AnimatorState extends State<Animator> with SingleTickerProviderStateMixin {
+class _AnimatorState extends State<_Animator> with SingleTickerProviderStateMixin {
   Timer? timer;
   AnimationController? animationController;
   Animation? animation;
@@ -54,26 +78,3 @@ class AnimatorState extends State<Animator> with SingleTickerProviderStateMixin 
   }
 }
 
-Timer? timer;
-Duration duration = const Duration();
-
-wait() {
-  if (timer == null || !timer!.isActive) {
-    timer = Timer(const Duration(microseconds: 120), () {
-      duration = const Duration();
-    });
-  }
-  duration += const Duration(milliseconds: 100);
-  return duration;
-}
-
-class WidgetAnimator extends StatelessWidget {
-  final Widget child;
-
-  const WidgetAnimator({super.key, required this.child});
-
-  @override
-  Widget build(BuildContext context) {
-    return Animator(key, child, wait());
-  }
-}

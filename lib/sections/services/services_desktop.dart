@@ -1,4 +1,3 @@
-import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app_constants.dart';
@@ -7,15 +6,8 @@ import '../../widget/section_heading.dart';
 import '../../widget/section_sub_heading.dart';
 import 'widgets/services_card.dart';
 
-class ServicesDesktop extends StatefulWidget {
+class ServicesDesktop extends StatelessWidget {
   const ServicesDesktop({super.key});
-
-  @override
-  ServicesDesktopState createState() => ServicesDesktopState();
-}
-
-class ServicesDesktopState extends State<ServicesDesktop> {
-  GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
 
   @override
   Widget build(BuildContext context) {

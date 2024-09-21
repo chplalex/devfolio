@@ -21,7 +21,7 @@ class TechToolsWidget extends StatelessWidget {
   Widget _buildItem({required String text}) => Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.play_arrow, color: AppTheme.c!.primary, size: AppDimensions.normalize(6.0)),
+          Icon(Icons.play_arrow, color: AppTheme.c?.primary, size: AppDimensions.normalize(6.0)),
           Text(text, style: AppText.l1b)
         ],
       );

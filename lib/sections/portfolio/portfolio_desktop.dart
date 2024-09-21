@@ -10,14 +10,9 @@ import '../../app/space.dart';
 import '../../widget/localized_text.dart';
 import '../../widget/section_sub_heading.dart';
 
-class PortfolioDesktop extends StatefulWidget {
+class PortfolioDesktop extends StatelessWidget {
   const PortfolioDesktop({super.key});
 
-  @override
-  State<PortfolioDesktop> createState() => _PortfolioDesktopState();
-}
-
-class _PortfolioDesktopState extends State<PortfolioDesktop> {
   @override
   Widget build(BuildContext context) {
     return Container(
