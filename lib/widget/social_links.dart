@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:folio/app/app_extensions.dart';
+import 'package:folio/models/social_item.dart';
 import 'package:folio/provider/app_provider.dart';
 import 'package:folio/utils/utils.dart';
 import 'package:provider/provider.dart';
 
+import '../app/app_constants.dart';
 import '../app/app_dimensions.dart';
-import '../app/app_theme.dart';
-import '../app/space.dart';
 
 class SocialLinks extends StatelessWidget {
   const SocialLinks({super.key});
@@ -14,30 +14,29 @@ class SocialLinks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appProvider = Provider.of<AppProvider>(context);
-    return Wrap(
-      runSpacing: AppDimensions.normalize(10),
-      alignment: WrapAlignment.center,
-      children: StaticUtils.socialIconURL
-          .asMap()
-          .entries
-          .map(
-            (e) => Padding(
-              padding: context.isMobile ? Space.all(0.2, 0) : Space.h!,
-              child: IconButton(
-                highlightColor: Colors.white54,
-                splashRadius: AppDimensions.normalize(12),
-                icon: Image.network(
-                  e.value,
-                  color: appProvider.isDark ? Colors.white : Colors.black,
-                  height: context.isMobile ? AppDimensions.normalize(10) : AppDimensions.normalize(15),
-                ),
-                iconSize: context.isMobile ? AppDimensions.normalize(10) : AppDimensions.normalize(15),
-                onPressed: () => openURL(StaticUtils.socialLinks[e.key]),
-                hoverColor: AppTheme.c!.primary!,
-              ),
-            ),
-          )
-          .toList(),
+    final itemColor = appProvider.isDark ? Colors.white : Colors.black;
+    final height = context.isMobile ? AppDimensions.normalize(15) : AppDimensions.normalize(20);
+    return SizedBox(
+      height: height,
+      child: ListView.separated(
+        shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) => _buildItem(context, item: socialItems[index], color: itemColor),
+        separatorBuilder: (_, __) => _separatorBuilder(),
+        itemCount: socialItems.length,
+      ),
     );
   }
+
+  Widget _buildItem(
+    BuildContext context, {
+    required SocialItem item,
+    required Color color,
+  }) =>
+      GestureDetector(
+        child: Icon(item.iconData, color: color),
+        onTap: () => openURL(item.url),
+      );
+
+  Widget _separatorBuilder() => SizedBox(width: AppDimensions.normalize(4));
 }

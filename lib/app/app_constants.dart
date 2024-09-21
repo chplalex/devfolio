@@ -3,6 +3,9 @@ import 'package:folio/models/contact_item.dart';
 import 'package:folio/models/drawer_item.dart';
 import 'package:folio/models/project_item.dart';
 import 'package:folio/models/service_item.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../models/social_item.dart';
 
 final techTools = [
   "Flutter",
@@ -141,3 +144,15 @@ class Sources {
   static const gitHubDevFolio = 'https://github.com/chplalex/devfolio';
   static const resume = 'https://drive.google.com/file/d/1Ycw9YNnAFpIo3ewou42SZZnFqW8h436z/view?usp=sharing';
 }
+
+const _socialData = [
+  (iconData: FontAwesomeIcons.linkedin, url: 'https://www.linkedin.com/in/alex-elpern/'),
+  (iconData: FontAwesomeIcons.github, url: 'https://github.com/chplalex'),
+];
+
+final socialItems = _socialData
+    .map((data) => SocialItem(
+          iconData: data.iconData,
+          url: data.url,
+        ))
+    .toList(growable: false);
