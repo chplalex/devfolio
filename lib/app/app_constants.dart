@@ -135,3 +135,9 @@ final drawerItems = List.generate(
   },
   growable: false,
 );
+
+class Sources {
+  static const gitHub = 'https://github.com/chplalex';
+  static const gitHubDevFolio = 'https://github.com/chplalex/devfolio';
+  static const resume = 'https://drive.google.com/file/d/1Ycw9YNnAFpIo3ewou42SZZnFqW8h436z/view?usp=sharing';
+}

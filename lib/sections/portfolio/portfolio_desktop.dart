@@ -7,6 +7,7 @@ import 'package:folio/widget/section_heading.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_typography.dart';
 import '../../app/space.dart';
+import '../../widget/localized_text.dart';
 import '../../widget/section_sub_heading.dart';
 
 class PortfolioDesktop extends StatefulWidget {
@@ -44,8 +45,8 @@ class _PortfolioDesktopState extends State<PortfolioDesktop> {
             height: AppDimensions.normalize(14),
             width: AppDimensions.normalize(50),
             child: OutlinedButton(
-              onPressed: () => openURL(StaticUtils.gitHub),
-              child: Text('See More', style: AppText.l1b),
+              onPressed: () => openURL(Sources.resume),
+              child: LocalizedText('see_more_label', style: AppText.l1b),
             ),
           )
         ],

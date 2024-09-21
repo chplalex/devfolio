@@ -5,19 +5,14 @@ import 'package:folio/widget/arrow_on_top.dart';
 import 'package:provider/provider.dart';
 
 import '../../app/app.dart';
-import 'widgets/body.dart';
+import 'widgets/main_body.dart';
 import 'widgets/mobile_drawer.dart';
 import 'widgets/nav_bar_desktop.dart';
 import 'widgets/nav_bar_tablet.dart';
 
-class MainPage extends StatefulWidget {
+class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     App.init(context);
@@ -30,7 +25,7 @@ class _MainPageState extends State<MainPage> {
       body: SafeArea(
         child: Stack(
           children: [
-            const Body(),
+            const MainBody(),
             const ArrowOnTop(),
             context.isDesktop ? const NavBarDesktop() : const NavBarTablet(),
           ],

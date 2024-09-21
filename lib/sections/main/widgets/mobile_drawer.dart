@@ -61,7 +61,7 @@ class MobileDrawer extends StatelessWidget {
                   hoverColor: AppTheme.c!.primary!.withAlpha(150),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0), side: BorderSide(color: AppTheme.c!.primary!)),
-                  onPressed: () => openURL(StaticUtils.resume),
+                  onPressed: () => openURL(Sources.resume),
                   child: const ListTile(
                     leading: Icon(Icons.book, color: Colors.red),
                     title: LocalizedText('resume_label'),

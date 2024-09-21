@@ -8,6 +8,7 @@ import 'package:folio/widget/section_heading.dart';
 import 'package:folio/widget/tech_tools_widget.dart';
 import 'package:universal_html/html.dart' as html;
 
+import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_theme.dart';
 import '../../app/app_typography.dart';
@@ -56,7 +57,7 @@ class AboutMobile extends StatelessWidget {
           Space.y!,
           OutlinedButton(
             onPressed: () {
-              kIsWeb ? html.window.open(StaticUtils.resume, "pdf") : openURL(StaticUtils.resume);
+              kIsWeb ? html.window.open(Sources.resume, "pdf") : openURL(Sources.resume);
             },
             child: const LocalizedText("resume_label"),
           ),

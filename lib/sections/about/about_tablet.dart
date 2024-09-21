@@ -8,6 +8,7 @@ import 'package:folio/widget/section_heading.dart';
 import 'package:folio/widget/tech_tools_widget.dart';
 import 'package:universal_html/html.dart' as html;
 
+import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_theme.dart';
 import '../../app/app_typography.dart';
@@ -77,7 +78,7 @@ class AboutTablet extends StatelessWidget {
                 height: AppDimensions.normalize(13),
                 width: AppDimensions.normalize(40),
                 child: OutlinedButton(
-                  onPressed: () => html.window.open(StaticUtils.resume, 'pdf'),
+                  onPressed: () => html.window.open(Sources.resume, 'pdf'),
                   child: const LocalizedText("resume_label"),
                 ),
               ),

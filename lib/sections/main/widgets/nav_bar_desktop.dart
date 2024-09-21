@@ -8,7 +8,6 @@ import '../../../app/app_theme.dart';
 import '../../../app/app_typography.dart';
 import '../../../app/space.dart';
 import '../../../provider/app_provider.dart';
-import '../../../utils/utils.dart';
 import '../../../widget/localized_text.dart';
 import '../../../widget/nav_bar_actions_button.dart';
 import '../../../widget/nav_bar_logo.dart';
@@ -35,14 +34,12 @@ class NavBarDesktop extends StatelessWidget {
             delay: const Duration(milliseconds: 100),
             duration: const Duration(milliseconds: 250),
             child: MaterialButton(
-              hoverColor: AppTheme.c!.primary!.withAlpha(150),
+              hoverColor: AppTheme.c?.primary?.withAlpha(150),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),
-                side: BorderSide(
-                  color: AppTheme.c!.primary!,
-                ),
+                side: BorderSide(color: AppTheme.c!.primary!),
               ),
-              onPressed: () => html.window.open(StaticUtils.resume, "pdf"),
+              onPressed: () => html.window.open(Sources.resume, "pdf"),
               child: Padding(
                 padding: Space.all(1.25, 0.45),
                 child: LocalizedText('resume_label', style: AppText.l1b),

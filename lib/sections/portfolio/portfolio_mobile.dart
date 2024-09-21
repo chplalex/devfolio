@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:folio/app/app_constants.dart';
 import 'package:folio/utils/utils.dart';
 import 'package:folio/widget/folio_card.dart';
+import 'package:folio/widget/localized_text.dart';
 import 'package:folio/widget/section_heading.dart';
 
 import '../../app/app_dimensions.dart';
@@ -15,7 +16,7 @@ class PortfolioMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    final height = MediaQuery.of(context).size.height;
     return Column(
       children: [
         const SectionHeading("portfolio_section_header"),
@@ -49,8 +50,8 @@ class PortfolioMobile extends StatelessWidget {
           height: AppDimensions.normalize(14),
           width: AppDimensions.normalize(50),
           child: OutlinedButton(
-            onPressed: () => openURL(StaticUtils.gitHub),
-            child: Text('See More', style: AppText.l1b),
+            onPressed: () => openURL(Sources.resume),
+            child: LocalizedText('see_more_label', style: AppText.l1b),
           ),
         )
       ],
