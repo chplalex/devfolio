@@ -23,7 +23,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace 'com.hmz.folio'
+    namespace 'com.chplalex.folio'
 
     compileSdkVersion 34
 
@@ -32,7 +32,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.hmz.folio"
+        applicationId "com.chplalex.folio"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion 34
         versionCode flutterVersionCode.toInteger()
