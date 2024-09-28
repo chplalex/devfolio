@@ -44,4 +44,4 @@ Is a multi-platform portfolio for developers available for mobile, windows and w
 
 If you liked the repo then kindly support it by giving it a star ⭐!
 
-Copyright (c) 2024 ALEX ELPERN aka alexCHPL
+:copyright: 2024 ALEX ELPERN aka alexCHPL
