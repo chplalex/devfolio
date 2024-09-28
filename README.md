@@ -37,7 +37,7 @@ Is a multi-platform portfolio for developers available for mobile, windows and w
 ## 🧑 Author
 
 #### Alex Elpern aka chplALEX
-[![LinkedIn Link](https://camo.githubusercontent.com/e9592fd6ea20b888ed3c7621d8c7257835af4f2e7232e92f5db4e9e2e4e91380/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6c696e6b6564696e2e737667?logo=linkedin&longCache=true&style=social&label=Connect)](https://www.linkedin.com/in/alex-elpern)
+[![LinkedIn Link](https://camo.githubusercontent.com/e9592fd6ea20b888ed3c7621d8c7257835af4f2e7232e92f5db4e9e2e4e91380/68747470733a2f2f6564656e742e6769746875622e696f2f537570657254696e7949636f6e732f696d616765732f7376672f6c696e6b6564696e2e737667?logo=linkedin&longCache=true&style=social&label=Connect =50x50)](https://www.linkedin.com/in/alex-elpern)
 
 You can also follow my GitHub Profile to stay updated about my latest projects:
 
