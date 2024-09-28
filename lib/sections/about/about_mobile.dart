@@ -30,17 +30,11 @@ class AboutMobile extends StatelessWidget {
           const SectionSubHeading('about_me_section_sub_header'),
           Space.y1!,
           Image.asset(StaticUtils.mobilePhoto, height: height * 0.27),
-          SizedBox(height: height * 0.03),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: LocalizedText("about_me_headline_label", style: AppText.b2!.copyWith(color: AppTheme.c!.primary)),
-          ),
           Space.y1!,
-          LocalizedText('about_me_headline_label', style: AppText.b2b!.copyWith(fontFamily: 'Montserrat')),
-          SizedBox(height: height * 0.02),
           LocalizedText(
             'about_me_headline',
             style: AppText.l1!.copyWith(height: 2, letterSpacing: 1.1, fontFamily: 'Montserrat'),
+            textAlign: TextAlign.center,
           ),
           Space.y!,
           Divider(color: Colors.grey[800], thickness: AppDimensions.normalize(0.5)),

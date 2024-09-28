@@ -42,7 +42,6 @@ class AboutDesktop extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      LocalizedText('about_me_headline_label', style: AppText.b1!.copyWith(color: AppTheme.c!.primary)),
                       Space.y1!,
                       LocalizedText('about_me_headline', style: AppText.b1b!.copyWith(fontFamily: 'Montserrat')),
                       Space.y!,
