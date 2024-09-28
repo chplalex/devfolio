@@ -1,6 +1,6 @@
 ## Let's recreate your Portfolio
 
-Get started now by cloning :)
+Be free to fork this project! 😄
 
 <img src="https://user-images.githubusercontent.com/43790152/171403666-468b63d9-52be-4ec6-9cdb-c08c0e9d18f3.png">
 
@@ -44,4 +44,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 If you liked the repo then kindly support it by giving it a star ⭐!
 
-:copyright: 2024 ALEX ELPERN aka alexCHPL
+©️ 2024 ALEX ELPERN aka alexCHPL
