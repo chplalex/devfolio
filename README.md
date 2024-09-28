@@ -32,7 +32,7 @@ Is a multi-platform portfolio for developers available for mobile, windows and w
 📱 Android App: https://play.google.com/store/apps/details?id=com.chplalex.folio
 
 ## 🔑 License
-- This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details
 
 ## 🧑 Author
 
