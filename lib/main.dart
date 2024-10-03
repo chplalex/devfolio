@@ -29,59 +29,31 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => AppProvider()),
-        ChangeNotifierProvider(create: (_) => DrawerProvider()),
-        ChangeNotifierProvider(create: (_) => ScrollProvider()),
-      ],
-      child: Consumer<AppProvider>(
-        builder: (context, value, _) => MaterialChild(
-          provider: value,
+  Widget build(BuildContext context) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => AppProvider()),
+          ChangeNotifierProvider(create: (_) => DrawerProvider()),
+          ChangeNotifierProvider(create: (_) => ScrollProvider()),
+        ],
+        child: Consumer<AppProvider>(
+          builder: (context, appProvider, _) {
+            appProvider.init();
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'chplALEX | portfolio',
+              theme: themeLight,
+              darkTheme: themeDark,
+              themeMode: appProvider.themeMode,
+              locale: Locale(AppLanguages.english.languageCode),
+              localizationsDelegates: const [
+                AppLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+              ],
+              home: const MainPage(),
+            );
+          },
         ),
-      ),
-    );
-  }
-}
-
-class MaterialChild extends StatefulWidget {
-  final AppProvider provider;
-
-  const MaterialChild({super.key, required this.provider});
-
-  @override
-  State<MaterialChild> createState() => _MaterialChildState();
-}
-
-class _MaterialChildState extends State<MaterialChild> {
-  void initAppTheme() {
-    final appProviders = AppProvider.state(context);
-    appProviders.init();
-  }
-
-  @override
-  void initState() {
-    initAppTheme();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'chplALEX | portfolio',
-      theme: themeLight,
-      darkTheme: themeDark,
-      themeMode: widget.provider.themeMode,
-      locale: Locale(AppLanguages.english.languageCode),
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      home: const MainPage(),
-    );
-  }
+      );
 }

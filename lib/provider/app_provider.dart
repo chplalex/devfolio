@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final themeMap = {
@@ -8,15 +7,6 @@ final themeMap = {
 };
 
 class AppProvider extends ChangeNotifier {
-  static AppProvider state(
-    BuildContext context, [
-    bool listen = false,
-  ]) =>
-      Provider.of<AppProvider>(
-        context,
-        listen: listen,
-      );
-
   ThemeMode _themeMode = ThemeMode.light;
 
   ThemeMode get themeMode => _themeMode;
