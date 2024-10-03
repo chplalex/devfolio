@@ -11,8 +11,8 @@ import '../../app/app_typography.dart';
 import '../../app/space.dart';
 import '../../widget/section_sub_heading.dart';
 
-class PortfolioMobile extends StatelessWidget {
-  const PortfolioMobile({super.key});
+class ProjectsMobile extends StatelessWidget {
+  const ProjectsMobile({super.key});
 
   @override
   Widget build(BuildContext context) {

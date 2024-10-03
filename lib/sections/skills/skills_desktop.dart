@@ -4,10 +4,10 @@ import '../../app/app_constants.dart';
 import '../../app/space.dart';
 import '../../widget/section_heading.dart';
 import '../../widget/section_sub_heading.dart';
-import 'widgets/services_card.dart';
+import 'widgets/skill_card.dart';
 
-class ServicesDesktop extends StatelessWidget {
-  const ServicesDesktop({super.key});
+class SkillsDesktop extends StatelessWidget {
+  const SkillsDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class ServicesDesktop extends StatelessWidget {
             crossAxisAlignment: WrapCrossAlignment.center,
             children: serviceItems
                 .map(
-                  (item) => ServiceCard(
+                  (item) => SkillCard(
                     icon: item.icon,
                     titleKey: item.titleKey,
                     descriptionKeys: item.descriptionKeys,

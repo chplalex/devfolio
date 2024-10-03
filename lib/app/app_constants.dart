@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:folio/models/contact_item.dart';
 import 'package:folio/models/drawer_item.dart';
 import 'package:folio/models/project_item.dart';
-import 'package:folio/models/service_item.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../models/skill_item.dart';
 import '../models/social_item.dart';
 
 final techTools = [
@@ -107,7 +107,7 @@ final serviceItems = List.generate(
       (indexDescription) => 'service_${indexService}_description_$indexDescription',
       growable: false,
     );
-    return ServiceItem(
+    return SkillItem(
       icon: serviceData.icon,
       titleKey: 'service_${indexService}_title',
       descriptionKeys: descriptionKeys,

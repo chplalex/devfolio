@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:folio/app/app_constants.dart';
 
 import '../../app/space.dart';
-import '../../models/service_item.dart';
+import '../../models/skill_item.dart';
 import '../../widget/section_heading.dart';
 import '../../widget/section_sub_heading.dart';
-import 'widgets/services_card.dart';
+import 'widgets/skill_card.dart';
 
-class ServicesMobile extends StatelessWidget {
-  const ServicesMobile({super.key});
+class SkillsMobile extends StatelessWidget {
+  const SkillsMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class ServicesMobile extends StatelessWidget {
         Space.y!,
         CarouselSlider.builder(
           itemCount: serviceItems.length,
-          itemBuilder: (BuildContext context, _, int index) => _serviceItem(serviceItems[index]),
+          itemBuilder: (BuildContext context, _, int index) => _buildItem(serviceItems[index]),
           options: CarouselOptions(
             viewportFraction: 0.65,
             height: width < 450 ? height * 0.4 : height * 0.4,
@@ -38,9 +38,9 @@ class ServicesMobile extends StatelessWidget {
     );
   }
 
-  Padding _serviceItem(ServiceItem item) => Padding(
+  Padding _buildItem(SkillItem item) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
-        child: ServiceCard(
+        child: SkillCard(
           icon: item.icon,
           titleKey: item.titleKey,
           descriptionKeys: item.descriptionKeys,

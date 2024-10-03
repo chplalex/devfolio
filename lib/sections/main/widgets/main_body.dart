@@ -6,8 +6,8 @@ import '../../../widget/footer.dart';
 import '../../about/about.dart';
 import '../../contact/contact.dart';
 import '../../home/home.dart';
-import '../../portfolio/portfolio.dart';
-import '../../services/services.dart';
+import '../../projects/projects.dart';
+import '../../skills/skills.dart';
 
 class MainBody extends StatelessWidget {
   const MainBody({super.key});
@@ -21,9 +21,9 @@ class MainBody extends StatelessWidget {
       children: const [
         Home(),
         About(),
-        Services(),
-        Portfolio(),
-        Contact(),
+        Skills(),
+        Projects(),
+        Contacts(),
         Footer(),
       ],
     );

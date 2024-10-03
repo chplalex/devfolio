@@ -1,7 +1,6 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:folio/sections/services/widgets/services_card_back.dart';
 import 'package:folio/widget/localized_text.dart';
 import 'package:provider/provider.dart';
 
@@ -10,13 +9,14 @@ import '../../../app/app_theme.dart';
 import '../../../app/space.dart';
 import '../../../provider/app_provider.dart';
 import '../../../utils/utils.dart';
+import 'skill_card_back.dart';
 
-class ServiceCard extends StatefulWidget {
+class SkillCard extends StatefulWidget {
   final String icon;
   final String titleKey;
   final List<String> descriptionKeys;
 
-  const ServiceCard({
+  const SkillCard({
     super.key,
     required this.icon,
     required this.titleKey,
@@ -24,10 +24,10 @@ class ServiceCard extends StatefulWidget {
   });
 
   @override
-  State<ServiceCard> createState() => _ServiceCardState();
+  State<SkillCard> createState() => _SkillCardState();
 }
 
-class _ServiceCardState extends State<ServiceCard> {
+class _SkillCardState extends State<SkillCard> {
   final _cardKey = GlobalKey<FlipCardState>();
   var _isHover = false;
 

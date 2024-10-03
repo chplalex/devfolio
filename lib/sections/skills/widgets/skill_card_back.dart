@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:folio/sections/services/widgets/hire_me_popup.dart';
 import 'package:folio/widget/localized_text.dart';
 import 'package:provider/provider.dart';
 
@@ -7,6 +6,7 @@ import '../../../app/app_dimensions.dart';
 import '../../../app/app_theme.dart';
 import '../../../app/app_typography.dart';
 import '../../../provider/app_provider.dart';
+import 'hire_me_popup.dart';
 
 class ServiceCardBackWidget extends StatelessWidget {
   final List<String> descriptionKeys;

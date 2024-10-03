@@ -10,8 +10,8 @@ import '../../app/space.dart';
 import '../../widget/localized_text.dart';
 import '../../widget/section_sub_heading.dart';
 
-class PortfolioDesktop extends StatelessWidget {
-  const PortfolioDesktop({super.key});
+class ProjectsDesktop extends StatelessWidget {
+  const ProjectsDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
