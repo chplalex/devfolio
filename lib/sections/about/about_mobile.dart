@@ -39,7 +39,7 @@ class AboutMobile extends StatelessWidget {
           Space.y!,
           Divider(color: Colors.grey[800], thickness: AppDimensions.normalize(0.5)),
           Space.y!,
-          LocalizedText('tool_tech_label', style: AppText.l1!.copyWith(color: AppTheme.c!.primary)),
+          LocalizedText('tech_tools_label', style: AppText.l1!.copyWith(color: AppTheme.c!.primary)),
           Space.y!,
           const TechToolsWidget(),
           Space.y!,

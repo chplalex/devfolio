@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:folio/app/app_constants.dart';
-import 'package:folio/utils/utils.dart';
-import 'package:folio/widget/folio_card.dart';
-import 'package:folio/widget/section_heading.dart';
 
+import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_typography.dart';
 import '../../app/space.dart';
+import '../../utils/utils.dart';
 import '../../widget/localized_text.dart';
+import '../../widget/section_heading.dart';
 import '../../widget/section_sub_heading.dart';
+import 'project_card.dart';
 
 class ProjectsDesktop extends StatelessWidget {
   const ProjectsDesktop({super.key});
@@ -19,14 +19,14 @@ class ProjectsDesktop extends StatelessWidget {
       padding: Space.h!,
       child: Column(
         children: [
-          const SectionHeading("portfolio_section_header"),
-          const SectionSubHeading("portfolio_section_sub_header"),
+          const SectionHeading("projects_section_header"),
+          const SectionSubHeading("projects_section_sub_header"),
           Wrap(
             alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
             runSpacing: AppDimensions.normalize(10),
             children: projectItems
-                .map((item) => FolioCard(
+                .map((item) => ProjectCard(
                       banner: item.banner,
                       icon: item.icon,
                       link: item.githubLink,

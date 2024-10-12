@@ -18,15 +18,15 @@ class SkillsDesktop extends StatelessWidget {
       padding: Space.hf(4),
       child: Column(
         children: [
-          const SectionHeading('services_section_header'),
-          const SectionSubHeading('services_section_sub_header'),
+          const SectionHeading('skills_section_header'),
+          const SectionSubHeading('skills_section_sub_header'),
           Space.y!,
           Wrap(
             spacing: width * 0.05,
             runSpacing: height * 0.05,
             alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
-            children: serviceItems
+            children: skillItems
                 .map(
                   (item) => SkillCard(
                     icon: item.icon,

@@ -1,15 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:folio/app/app_constants.dart';
-import 'package:folio/utils/utils.dart';
-import 'package:folio/widget/folio_card.dart';
-import 'package:folio/widget/localized_text.dart';
-import 'package:folio/widget/section_heading.dart';
 
+import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_typography.dart';
 import '../../app/space.dart';
+import '../../utils/utils.dart';
+import '../../widget/localized_text.dart';
+import '../../widget/section_heading.dart';
 import '../../widget/section_sub_heading.dart';
+import 'project_card.dart';
 
 class ProjectsMobile extends StatelessWidget {
   const ProjectsMobile({super.key});
@@ -19,15 +19,15 @@ class ProjectsMobile extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        const SectionHeading("portfolio_section_header"),
-        const SectionSubHeading("portfolio_section_sub_header"),
+        const SectionHeading("projects_section_header"),
+        const SectionSubHeading("projects_section_sub_header"),
         CarouselSlider.builder(
           itemCount: projectItems.length,
           itemBuilder: (_, __, int index) {
             final item = projectItems[index];
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 15.0),
-              child: FolioCard(
+              child: ProjectCard(
                 icon: item.icon,
                 link: item.githubLink,
                 title: item.titleKey,

@@ -1,4 +1,5 @@
-import 'package:folio/utils/utils.dart';
+
+import '../app/app_constants.dart';
 
 class WorkUtils {
   static const List<String> logos = [

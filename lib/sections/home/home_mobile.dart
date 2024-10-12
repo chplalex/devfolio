@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:folio/sections/home/home_animated_text_kit.dart';
-import 'package:folio/utils/utils.dart';
 import 'package:folio/widget/social_links.dart';
 
+import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_theme.dart';
 import '../../app/app_typography.dart';

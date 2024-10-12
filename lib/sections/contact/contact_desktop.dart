@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:folio/animations/widget_animator.dart';
-import 'package:folio/widget/folio_card.dart';
-import 'package:folio/widget/section_heading.dart';
 
+import '../../animations/widget_animator.dart';
+import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/space.dart';
-import '../../app/app_constants.dart';
+import '../../widget/section_heading.dart';
 import '../../widget/section_sub_heading.dart';
+import 'contact_card.dart';
 
 class ContactDesktop extends StatelessWidget {
   const ContactDesktop({super.key});
@@ -25,7 +25,7 @@ class ContactDesktop extends StatelessWidget {
             runSpacing: AppDimensions.normalize(10),
             children: contactItems
                 .map((item) => WidgetAnimator(
-                      child: FolioCard(
+                      child: ContactCard(
                         iconData: item.iconData,
                         title: item.titleKey,
                         description: item.descriptionKey,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:folio/animations/entrance_fader.dart';
-import 'package:folio/utils/utils.dart';
 import 'package:folio/widget/social_links.dart';
 
+import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_theme.dart';
 import '../../app/app_typography.dart';

@@ -1,6 +1,7 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:folio/widget/localized_text.dart';
 import 'package:provider/provider.dart';
 
@@ -8,7 +9,6 @@ import '../../../app/app_dimensions.dart';
 import '../../../app/app_theme.dart';
 import '../../../app/space.dart';
 import '../../../provider/app_provider.dart';
-import '../../../utils/utils.dart';
 import 'skill_card_back.dart';
 
 class SkillCard extends StatefulWidget {
@@ -79,11 +79,7 @@ class _SkillCardState extends State<SkillCard> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                widget.icon,
-                height: AppDimensions.normalize(30),
-                color: widget.icon.contains(StaticUtils.openSource) && !appProvider.isDark ? Colors.black : null,
-              ),
+              SvgPicture.asset(widget.icon, height: AppDimensions.normalize(60)),
               Space.y1!,
               LocalizedText(widget.titleKey, textAlign: TextAlign.center),
             ],

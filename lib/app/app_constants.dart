@@ -70,46 +70,27 @@ const projectItems = [
       titleKey: 'project_title_08',
       descriptionKey: 'project_description_08',
       githubLink: 'https://github.com/mhmzdev/Earbender_Music_App'),
-  ProjectItem(
-      banner: null,
-      icon: 'assets/projects/java.png',
-      titleKey: 'project_title_09',
-      descriptionKey: 'project_description_09',
-      githubLink: 'https://github.com/mhmzdev/FTP_GUI_Java'),
-  ProjectItem(
-      banner: null,
-      icon: 'assets/projects/android.png',
-      titleKey: 'project_title_10',
-      descriptionKey: 'project_description_10',
-      githubLink: 'https://github.com/mhmzdev/My-Order-Resturant-Ordering-System'),
-  ProjectItem(
-      banner: null,
-      icon: 'assets/services/open_b.png',
-      titleKey: 'project_title_11',
-      descriptionKey: 'project_description_11',
-      githubLink: 'https://github.com/mhmzdev/Hidev_Web'),
 ];
 
-const _servicesData = [
-  (icon: "assets/services/app.png", descriptionsCount: 4),
-  (icon: "assets/services/ui.png", descriptionsCount: 5),
-  (icon: "assets/services/rapid.png", descriptionsCount: 2),
-  (icon: "assets/services/blog.png", descriptionsCount: 4),
-  (icon: "assets/services/open.png", descriptionsCount: 3),
+const _skillsData = [
+  (icon: "assets/skills/flutter_icon.svg", descriptionsCount: 4),
+  (icon: "assets/skills/android_icon.svg", descriptionsCount: 5),
+  (icon: "assets/skills/ci_cd_icon.svg", descriptionsCount: 2),
+  (icon: "assets/skills/other_skills_icon.svg", descriptionsCount: 4),
 ];
 
-final serviceItems = List.generate(
-  _servicesData.length,
+final skillItems = List.generate(
+  _skillsData.length,
   (indexService) {
-    final serviceData = _servicesData[indexService];
+    final serviceData = _skillsData[indexService];
     final descriptionKeys = List.generate(
       serviceData.descriptionsCount,
-      (indexDescription) => 'service_${indexService}_description_$indexDescription',
+      (indexDescription) => 'skill_${indexService}_description_$indexDescription',
       growable: false,
     );
     return SkillItem(
       icon: serviceData.icon,
-      titleKey: 'service_${indexService}_title',
+      titleKey: 'skill_${indexService}_title',
       descriptionKeys: descriptionKeys,
     );
   },
@@ -156,3 +137,18 @@ final socialItems = _socialData
           url: data.url,
         ))
     .toList(growable: false);
+
+class StaticUtils {
+  static const String hi = 'assets/hi.gif';
+
+  // photos
+  static const String mobilePhoto = 'assets/photos/mobile.png';
+  static const String coloredPhoto = 'assets/photos/colored.png';
+  static const String blackWhitePhoto = 'assets/photos/black-white.png';
+
+  // work
+  static const String dsc = 'assets/work/dsc.png';
+  static const String sastaTicket = 'assets/work/st.png';
+  static const String university = 'assets/work/cui.png';
+  static const String flutterIsb = 'assets/work/flutterIsl.png';
+}

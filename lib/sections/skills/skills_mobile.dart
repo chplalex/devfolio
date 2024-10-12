@@ -17,12 +17,12 @@ class SkillsMobile extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        const SectionHeading('services_section_header'),
-        const SectionSubHeading('services_section_sub_header'),
+        const SectionHeading('skills_section_header'),
+        const SectionSubHeading('skills_section_sub_header'),
         Space.y!,
         CarouselSlider.builder(
-          itemCount: serviceItems.length,
-          itemBuilder: (BuildContext context, _, int index) => _buildItem(serviceItems[index]),
+          itemCount: skillItems.length,
+          itemBuilder: (BuildContext context, _, int index) => _buildItem(skillItems[index]),
           options: CarouselOptions(
             viewportFraction: 0.65,
             height: width < 450 ? height * 0.4 : height * 0.4,

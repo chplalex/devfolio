@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:folio/provider/app_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../app/app_dimensions.dart';
-import '../app/app_theme.dart';
-import '../app/app_typography.dart';
-import '../app/space.dart';
-import '../utils/utils.dart';
-import 'localized_text.dart';
+import '../../app/app_dimensions.dart';
+import '../../app/app_theme.dart';
+import '../../app/app_typography.dart';
+import '../../app/space.dart';
+import '../../utils/utils.dart';
+import '../../widget/localized_text.dart';
 
-class FolioCard extends StatefulWidget {
+class ContactCard extends StatefulWidget {
   final String? banner;
   final String? link;
   final String? icon;
@@ -17,7 +17,7 @@ class FolioCard extends StatefulWidget {
   final String description;
   final IconData? iconData;
 
-  const FolioCard({
+  const ContactCard({
     super.key,
     this.banner,
     this.icon,
@@ -28,10 +28,10 @@ class FolioCard extends StatefulWidget {
   });
 
   @override
-  FolioCardState createState() => FolioCardState();
+  ContactCardState createState() => ContactCardState();
 }
 
-class FolioCardState extends State<FolioCard> {
+class ContactCardState extends State<ContactCard> {
   bool _isHover = false;
 
   @override

@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:folio/widget/folio_card.dart';
-import 'package:folio/widget/section_heading.dart';
 
-import '../../app/app_dimensions.dart';
 import '../../app/app_constants.dart';
+import '../../app/app_dimensions.dart';
 import '../../models/contact_item.dart';
+import '../../widget/section_heading.dart';
 import '../../widget/section_sub_heading.dart';
+import 'contact_card.dart';
 
 class ContactMobile extends StatelessWidget {
   const ContactMobile({super.key});
@@ -36,6 +36,6 @@ class ContactMobile extends StatelessWidget {
 
   Widget _buildItem(ContactItem item) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
-        child: FolioCard(iconData: item.iconData, title: item.titleKey, description: item.descriptionKey),
+        child: ContactCard(iconData: item.iconData, title: item.titleKey, description: item.descriptionKey),
       );
 }
