@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:folio/utils/utils.dart';
 import 'package:folio/utils/work_utils.dart';
@@ -6,7 +5,6 @@ import 'package:folio/widget/about_me_widget.dart';
 import 'package:folio/widget/community_button.dart';
 import 'package:folio/widget/section_heading.dart';
 import 'package:folio/widget/tech_tools_widget.dart';
-import 'package:universal_html/html.dart' as html;
 
 import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
@@ -49,11 +47,15 @@ class AboutMobile extends StatelessWidget {
           const AboutMeWidget(labelKey: "email_label", valueKey: "email"),
           const AboutMeWidget(labelKey: "place_label", valueKey: "place"),
           Space.y!,
-          OutlinedButton(
-            onPressed: () {
-              kIsWeb ? html.window.open(Sources.resume, "pdf") : openURL(Sources.resume);
-            },
-            child: const LocalizedText("resume_label"),
+          TextButton(
+            style: TextButton.styleFrom(
+              minimumSize: Size.zero,
+              padding: EdgeInsets.symmetric(vertical: 8.0),
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              textStyle: AppText.b1b!.copyWith(decoration: TextDecoration.underline, fontFamily: 'Montserrat'),
+            ),
+            onPressed: () => openURL(Sources.resume),
+            child: LocalizedText("resume_label"),
           ),
           Space.y!,
           Wrap(

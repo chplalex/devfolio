@@ -5,13 +5,13 @@ import 'package:folio/widget/community_button.dart';
 import 'package:folio/widget/localized_text.dart';
 import 'package:folio/widget/section_heading.dart';
 import 'package:folio/widget/tech_tools_widget.dart';
-import 'package:universal_html/html.dart' as html;
 
 import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_theme.dart';
 import '../../app/app_typography.dart';
 import '../../app/space.dart';
+import '../../utils/utils.dart';
 import '../../widget/section_sub_heading.dart';
 
 class AboutTablet extends StatelessWidget {
@@ -76,9 +76,15 @@ class AboutTablet extends StatelessWidget {
               SizedBox(
                 height: AppDimensions.normalize(13),
                 width: AppDimensions.normalize(40),
-                child: OutlinedButton(
-                  onPressed: () => html.window.open(Sources.resume, 'pdf'),
-                  child: const LocalizedText("resume_label"),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    minimumSize: Size.zero,
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    textStyle: AppText.b1b!.copyWith(decoration: TextDecoration.underline, fontFamily: 'Montserrat'),
+                  ),
+                  onPressed: () => openURL(Sources.resume),
+                  child: LocalizedText("resume_label"),
                 ),
               ),
               Space.x!,

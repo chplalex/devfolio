@@ -79,7 +79,7 @@ class _SkillCardState extends State<SkillCard> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset(widget.icon, height: AppDimensions.normalize(60)),
+              SvgPicture.asset(widget.icon, height: AppDimensions.normalize(50)),
               Space.y1!,
               LocalizedText(widget.titleKey, textAlign: TextAlign.center),
             ],

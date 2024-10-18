@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folio/app/app_constants.dart';
+import 'package:folio/utils/utils.dart';
 import 'package:provider/provider.dart';
-import 'package:universal_html/html.dart' as html;
 
 import '../../../animations/entrance_fader.dart';
 import '../../../app/app_theme.dart';
@@ -39,7 +39,7 @@ class NavBarDesktop extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5.0),
                 side: BorderSide(color: AppTheme.c!.primary!),
               ),
-              onPressed: () => html.window.open(Sources.resume, "pdf"),
+              onPressed: () => openURL(Sources.resume),
               child: Padding(
                 padding: Space.all(1.25, 0.45),
                 child: LocalizedText('resume_label', style: AppText.l1b),

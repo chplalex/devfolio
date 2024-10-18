@@ -24,6 +24,7 @@ const _skillsData = [
   (icon: "assets/skills/flutter_icon.svg", descriptionsCount: 4),
   (icon: "assets/skills/android_icon.svg", descriptionsCount: 5),
   (icon: "assets/skills/ci_cd_icon.svg", descriptionsCount: 2),
+  (icon: "assets/skills/firebase_icon.svg", descriptionsCount: 4),
   (icon: "assets/skills/other_skills_icon.svg", descriptionsCount: 4),
 ];
 

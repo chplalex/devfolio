@@ -89,7 +89,7 @@ class ProjectCardState extends State<ProjectCard> {
               opacity: _isHover ? 0.0 : 1.0,
               child: context.isDesktop
                   ? Container(
-                      color: Colors.white,
+                      color: appProvider.isDark ? Colors.grey[900] : Colors.white,
                       height: double.infinity,
                       width: double.infinity,
                       alignment: Alignment.center,
