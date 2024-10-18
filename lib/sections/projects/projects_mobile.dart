@@ -5,6 +5,7 @@ import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_typography.dart';
 import '../../app/space.dart';
+import '../../models/project_item.dart';
 import '../../utils/utils.dart';
 import '../../widget/localized_text.dart';
 import '../../widget/section_heading.dart';
@@ -12,7 +13,9 @@ import '../../widget/section_sub_heading.dart';
 import 'project_card.dart';
 
 class ProjectsMobile extends StatelessWidget {
-  const ProjectsMobile({super.key});
+  final List<ProjectItem> projects;
+
+  const ProjectsMobile({super.key, required this.projects});
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +25,9 @@ class ProjectsMobile extends StatelessWidget {
         const SectionHeading("projects_section_header"),
         const SectionSubHeading("projects_section_sub_header"),
         CarouselSlider.builder(
-          itemCount: projectItems.length,
+          itemCount: projects.length,
           itemBuilder: (_, __, int index) {
-            final item = projectItems[index];
+            final item = projects[index];
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: 15.0),
               child: ProjectCard(

@@ -4,6 +4,7 @@ import '../../app/app_constants.dart';
 import '../../app/app_dimensions.dart';
 import '../../app/app_typography.dart';
 import '../../app/space.dart';
+import '../../models/project_item.dart';
 import '../../utils/utils.dart';
 import '../../widget/localized_text.dart';
 import '../../widget/section_heading.dart';
@@ -11,7 +12,9 @@ import '../../widget/section_sub_heading.dart';
 import 'project_card.dart';
 
 class ProjectsDesktop extends StatelessWidget {
-  const ProjectsDesktop({super.key});
+  final List<ProjectItem> projects;
+
+  const ProjectsDesktop({super.key, required this.projects});
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +28,8 @@ class ProjectsDesktop extends StatelessWidget {
             alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
             runSpacing: AppDimensions.normalize(10),
-            children: projectItems
+            children: projects
                 .map((item) => ProjectCard(
-                      banner: item.banner,
                       icon: item.icon,
                       link: item.githubLink,
                       title: item.titleKey,

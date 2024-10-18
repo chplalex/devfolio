@@ -18,13 +18,13 @@ class MainBody extends StatelessWidget {
 
     return ListView(
       controller: scrollProvider.controller,
-      children: const [
-        Home(),
-        About(),
-        Skills(),
+      children: [
+        const Home(),
+        const About(),
+        const Skills(),
         Projects(),
-        Contacts(),
-        Footer(),
+        const Contacts(),
+        const Footer(),
       ],
     );
   }

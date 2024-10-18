@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:folio/app/app_enums.dart';
+import 'package:folio/data/app_repository.dart';
+import 'package:folio/data/table_manager.dart';
 import 'package:folio/provider/app_provider.dart';
 import 'package:folio/provider/drawer_provider.dart';
 import 'package:folio/provider/scroll_provider.dart';
@@ -34,6 +36,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => AppProvider()),
           ChangeNotifierProvider(create: (_) => DrawerProvider()),
           ChangeNotifierProvider(create: (_) => ScrollProvider()),
+          Provider(create: (_) => AppRepository(TableManager())),
         ],
         child: Consumer<AppProvider>(
           builder: (context, appProvider, _) {

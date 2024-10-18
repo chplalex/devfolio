@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:folio/app/app_extensions.dart';
 import 'package:folio/provider/app_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -10,19 +11,15 @@ import '../../utils/utils.dart';
 import '../../widget/localized_text.dart';
 
 class ProjectCard extends StatefulWidget {
-  final String? banner;
   final String? link;
-  final String? icon;
+  final String icon;
   final String title;
   final String description;
-  final IconData? iconData;
 
   const ProjectCard({
     super.key,
-    this.banner,
-    this.icon,
+    required this.icon,
     this.link,
-    this.iconData,
     required this.title,
     required this.description,
   });
@@ -64,23 +61,20 @@ class ProjectCardState extends State<ProjectCard> {
           ],
         ),
         child: Stack(
-          fit: StackFit.expand,
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                if (widget.icon != null)
                   (width > 1135 || width < 950)
-                      ? Image.asset(widget.icon!, height: height * 0.05)
-                      : Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Image.asset(widget.icon!, height: height * 0.03),
-                            SizedBox(width: width * 0.01),
-                            LocalizedText(widget.title, style: AppText.b2b, textAlign: TextAlign.center),
-                          ],
-                        ),
-                if (widget.iconData != null) Icon(widget.iconData, color: AppTheme.c!.primary!, size: height * 0.1),
+                    ? Image.asset(widget.icon, height: height * 0.05)
+                    : Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Image.asset(widget.icon, height: height * 0.03),
+                          SizedBox(width: width * 0.01),
+                          LocalizedText(widget.title, style: AppText.b2b, textAlign: TextAlign.center),
+                        ],
+                      ),
                 if (width > 1135 || width < 950) ...[
                   SizedBox(height: height * 0.02),
                   LocalizedText(widget.title, style: AppText.b2b, textAlign: TextAlign.center),
@@ -93,10 +87,15 @@ class ProjectCardState extends State<ProjectCard> {
             AnimatedOpacity(
               duration: const Duration(milliseconds: 400),
               opacity: _isHover ? 0.0 : 1.0,
-              child: FittedBox(
-                fit: BoxFit.fill,
-                child: widget.banner != null ? Image.asset(widget.banner!) : Container(),
-              ),
+              child: context.isDesktop
+                  ? Container(
+                      color: Colors.white,
+                      height: double.infinity,
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      child: Image.asset(widget.icon, fit: BoxFit.cover),
+                    )
+                  : const SizedBox.shrink(),
             ),
           ],
         ),
